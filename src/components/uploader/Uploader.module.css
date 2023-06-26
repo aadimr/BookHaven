@@ -1,0 +1,20 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.mainContainer{
+    border: 2px dashed;
+    margin-bottom: 1rem;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image{
+    width: 30vw;
+    height: 29.7vh;
+    overflow: hidden;
+}

@@ -1,0 +1,32 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+.img{
+    width: 15rem;
+    height: 22rem;
+}
+
+.reviewAndPrice{
+    display: flex;
+    justify-content: space-between;
+}
+
+.details{
+    margin: 1rem;
+}
+
+.bookDetails{
+    margin: 3rem 0rem 5rem 0rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.bookNameAndOptionIcon{
+    display: flex;
+    justify-content: space-between;
+}

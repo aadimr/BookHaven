@@ -1,0 +1,40 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 3rem 0rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.input{
+    width: 30vw;
+    height: 6vh;
+    padding-left: 1rem;
+    font-size: 1rem;
+}
+
+.btnDiv{
+    display: flex;
+    justify-content: center;
+}
+
+.inputDiv{
+    margin-bottom: 1rem;
+}
+
+.errorMessage{
+    color: red;
+    width: 30vw;
+}
+
+.h1{
+    color: #3E8ED0;
+    text-decoration: underline;
+}

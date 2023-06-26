@@ -1,0 +1,40 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    height: 100vh;
+    background: #C8E2F7;
+}
+
+.img{
+    width: 12rem;
+    height: 20rem;
+}
+
+.reviewAndPrice{
+    display: flex;
+    justify-content: space-between;
+}
+
+.details{
+    margin: 1rem;
+}
+
+.bookDetails{
+    width: 80vw;
+}

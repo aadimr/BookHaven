@@ -1,0 +1,81 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    height: 70vh;
+    background-color: #C8E2F7;
+    display: flex;
+    justify-content: center;
+}
+
+.mainContainer {
+    width: 80vw;
+    margin-top: 5rem;
+    display: flex;
+    gap: 6rem;
+}
+
+.img {
+    width: 6rem;
+}
+
+.text {
+    width: 15rem;
+    font-weight: 400;
+    line-height: 1.8;
+    font-family: "Roboto",sans-serif;
+    color: #454E6D;
+}
+
+.logoAndText {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+}
+
+.icons{
+    display: flex;
+    gap: .7rem;
+    list-style: none;
+}
+
+.icons li{
+    border: 1px solid;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+a{
+    color: #454E6D;
+}
+
+.bookCategoryAndSiteMap{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.bookCategoryAndSiteMap li{
+    color: #454E6D;
+    cursor: pointer;
+}
+
+.copyRight{
+    background-color: #C8E2F7;
+    display: flex;
+    justify-content: center;
+    height: 1.7rem;
+}
+
+.link{
+    text-decoration: none;
+}
