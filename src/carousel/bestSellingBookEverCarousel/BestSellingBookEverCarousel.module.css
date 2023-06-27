@@ -1,17 +1,17 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-.h1{
+.h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
 
-.wrapper{
+.wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,20 +21,36 @@
     background: #C8E2F7;
 }
 
-.img{
+.img {
     width: 12rem;
     height: 20rem;
 }
 
-.reviewAndPrice{
+.reviewAndPrice {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.details{
+.details {
     margin: 1rem;
 }
 
-.bookDetails{
+.bookDetails {
     width: 80vw;
+}
+
+.book_Name {
+    font-weight: 500;
+    color: #3E8ED0;
+}
+
+.reviewStar {
+    display: flex;
+    align-items: center;
+    gap: .1rem;
+}
+
+.h3 {
+    color: #3E8ED0;
 }

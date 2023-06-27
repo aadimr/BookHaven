@@ -2,7 +2,7 @@ import style from "./BestSellingBookEverCarousel.module.css";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { showBook } from "../../store/BooksSlice";
-import { AiFillStar } from 'react-icons/ai';
+import StarIcon from '@mui/icons-material/Star';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -14,7 +14,7 @@ function BestSellingBookEverCarousel() {
   const dispatch = useDispatch();
 
   const { books, loading } = useSelector((state) => state.app);
-  
+
   useEffect(() => {
     dispatch(showBook());
   }, []);
@@ -46,17 +46,18 @@ function BestSellingBookEverCarousel() {
         <Slider {...settings}>
           {filteredBook && filteredBook
             .map((ele, index) => (
-              <Card sx={{ maxWidth: "12rem" }} key={index}>
+              <Card sx={{ maxWidth: "12rem", maxHeight: "28rem" }} key={index}>
                 <img src={ele.img} alt="error" className={style.img} />
                 <div className={style.details}>
-                  <h2>{ele.book_Name}</h2>
+                  <p className={style.book_Name}>{ele.book_Name}</p>
                   <p>{ele.author_Name}</p>
                   <div className={style.reviewAndPrice}>
-                    <p>
-                      {ele.review}
-                      <AiFillStar />
-                    </p>
-                    <h3>₹{ele.price}</h3>
+                    <div className={style.reviewStar}>
+                      <p>
+                        {ele.review}  </p>
+                      <span><StarIcon sx={{fontSize:"medium",marginTop:".3rem",color:"#FFD700"}}/></span>
+                    </div>
+                    <h3 className={style.h3}>₹{ele.price}</h3>
                   </div>
                 </div>
               </Card>
