@@ -25,17 +25,17 @@ function AllBooks() {
         <div className={style.wrapper}>
             <div className={style.bookDetails}>
                 {books && books.map((ele, index) => (
-                    <Card  key={index}>
+                    <Card  key={index} sx={{width:"15rem"}}>
                         <img src={ele.img} alt="error" className={style.img} />
                         <div className={style.details}>
                             <div className={style.bookNameAndOptionIcon}>
-                                <h2>{ele.book_Name}</h2>
-                                <span><OptionMenu id={ele.id}/></span>
+                                <p>{ele.book_Name}</p>
+                                <span className={style.optionMenu}><OptionMenu id={ele.id}/></span>
                             </div>
                             <p>{ele.author_Name}</p>
                             <div className={style.reviewAndPrice}>
                                 <p>{ele.review}<AiFillStar /></p>
-                                <h3>₹{ele.price}</h3>
+                                <h3 className={style.price}>₹{ele.price}</h3>
                             </div>
                         </div>
                     </Card>
