@@ -5,8 +5,8 @@
 }
 
 .img{
-    width: 15rem;
-    height: 22rem;
+    width: 8rem;
+    height: 10rem;
 }
 
 .reviewAndPrice{
@@ -15,14 +15,16 @@
 }
 
 .details{
-    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
 }
 
 .bookDetails{
     margin: 3rem 0rem 5rem 0rem;
     display: flex;
+    flex-direction: column;
     gap: 2rem;
-    flex-wrap: wrap;
 }
 
 .bookNameAndOptionIcon{
@@ -32,12 +34,29 @@
     font-size: 1.2rem;
     color: #3E8ED0;
     margin-bottom: .2rem;
+    width: 20rem;
 }
 
 .optionMenu{
     margin-top: .2rem;
 }
 
-.price{
+.price {
     color: #3E8ED0;
+}
+
+.By{
+    color: #3E8ED0;
+    font-weight: 500;
+}
+
+.reviewStar {
+    display: flex;
+    align-items: center;
+    gap: .1rem;
+}
+
+.reviewStar p span{
+    color: #3E8ED0;
+    font-weight: 500;
 }

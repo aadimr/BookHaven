@@ -10,13 +10,14 @@
 
 .allFilter {
     width: 30vw;
-    /* border: 2px solid; */
+    border-right: 2px solid lightgray;
     padding-left: 5rem;
     padding-top: 2.5rem;
+    margin: 2.5rem 0rem 1rem 0rem;
 }
 
 .allBooks {
     width: 70vw;
-    /* border: 2px solid; */
     padding-left: 5rem;
+    margin: 2.5rem 0rem 1rem 0rem;
 }
