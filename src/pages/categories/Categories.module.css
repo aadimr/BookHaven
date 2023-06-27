@@ -1,0 +1,22 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.allFilter {
+    width: 30vw;
+    /* border: 2px solid; */
+    padding-left: 5rem;
+    padding-top: 2.5rem;
+}
+
+.allBooks {
+    width: 70vw;
+    /* border: 2px solid; */
+    padding-left: 5rem;
+}

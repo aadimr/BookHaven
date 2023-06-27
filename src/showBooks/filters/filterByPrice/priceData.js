@@ -1,0 +1,1 @@
+export const priceData = ["200 to 400","401 to 600","601 to 800","801 to 1000","1001 to 1200"]
