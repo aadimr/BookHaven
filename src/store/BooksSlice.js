@@ -45,7 +45,7 @@ export const deleteBook = createAsyncThunk(
   async (id, { rejectWithValue }) => {
     const response = await fetch(
       `https://647c4884c0bae2880ad0867a.mockapi.io/CRUD/${id}`,
-      {method:"DELETE"}
+      { method: "DELETE" }
     );
     try {
       const result = await response.json();
@@ -80,6 +80,23 @@ export const updateBook = createAsyncThunk(
   }
 );
 
+// filterByAuthorName action
+export const filterByAuthorName = createAsyncThunk(
+  "filterByAuthorName",
+  async (authorName, { rejectWithValue }) => {
+    try {
+      const response = await fetch(
+        `https://647c4884c0bae2880ad0867a.mockapi.io/CRUD?author_Name=${authorName}`
+      );
+      const result = await response.json();
+      console.log(result)
+      return result;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
+
 export const BooksDetail = createSlice({
   name: "Book",
   initialState: {
@@ -107,6 +124,9 @@ export const BooksDetail = createSlice({
       .addCase(showBook.fulfilled, (state, action) => {
         state.loading = false;
         state.books = action.payload;
+        if (state.isFilterActive && state.filterByAuthorNameBooks.length === 0) {
+          state.isFilterActive = false;
+        }
       })
       .addCase(showBook.rejected, (state, action) => {
         state.loading = false;
@@ -117,8 +137,8 @@ export const BooksDetail = createSlice({
       })
       .addCase(deleteBook.fulfilled, (state, action) => {
         state.loading = false;
-        const {id} = action.payload;
-        if(id){
+        const { id } = action.payload;
+        if (id) {
           state.books = state.books.filter((ele) => ele.id !== id)
         }
       })
@@ -131,11 +151,23 @@ export const BooksDetail = createSlice({
       })
       .addCase(updateBook.fulfilled, (state, action) => {
         state.loading = false;
-       state.books = state.books.map((ele) => 
-        ele.id === action.payload.id ? action.payload : ele
-       )
+        state.books = state.books.map((ele) =>
+          ele.id === action.payload.id ? action.payload : ele
+        )
       })
       .addCase(updateBook.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error;
+      })
+      .addCase(filterByAuthorName.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(filterByAuthorName.fulfilled, (state, action) => {
+        state.loading = false;
+        state.books = action.payload;
+        console.log(action.payload)
+      })
+      .addCase(filterByAuthorName.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error;
       });

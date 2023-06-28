@@ -10,10 +10,6 @@ import { updateBook } from "../../store/BooksSlice";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const generateRandomReview = () => {
-    return Math.floor(Math.random() * 5) + 1;
-};
-
 const initialValues = {
     img: "",
     book_Name: "",
