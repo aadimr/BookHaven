@@ -97,6 +97,23 @@ export const filterByAuthorName = createAsyncThunk(
   }
 );
 
+// filterByPrice action
+export const filterByPrice = createAsyncThunk(
+  "filterByAuthorName",
+  async (priceRange, { rejectWithValue }) => {
+    try {
+      const response = await fetch(
+        `https://647c4884c0bae2880ad0867a.mockapi.io/CRUD?author_Name=${priceRange}`
+      );
+      const result = await response.json();
+      console.log(result)
+      return result;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
+
 export const BooksDetail = createSlice({
   name: "Book",
   initialState: {
@@ -124,9 +141,6 @@ export const BooksDetail = createSlice({
       .addCase(showBook.fulfilled, (state, action) => {
         state.loading = false;
         state.books = action.payload;
-        if (state.isFilterActive && state.filterByAuthorNameBooks.length === 0) {
-          state.isFilterActive = false;
-        }
       })
       .addCase(showBook.rejected, (state, action) => {
         state.loading = false;
@@ -170,7 +184,19 @@ export const BooksDetail = createSlice({
       .addCase(filterByAuthorName.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error;
-      });
+      })
+      // .addCase(filterByPrice.pending, (state) => {
+      //   state.loading = true;
+      // })
+      // .addCase(filterByPrice.fulfilled, (state, action) => {
+      //   state.loading = false;
+      //   state.books = action.payload;
+      //   console.log(action.payload)
+      // })
+      // .addCase(filterByPrice.rejected, (state, action) => {
+      //   state.loading = false;
+      //   state.error = action.error;
+      // });
   },
 });
 

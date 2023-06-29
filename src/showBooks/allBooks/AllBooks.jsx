@@ -28,7 +28,9 @@ function AllBooks() {
                 {books && books.map((ele, index) => (
                     <Card key={index} sx={{
                         display: "flex",
-                        gap: "2rem"
+                        gap: "2rem",
+                        backgroundColor: "rgba(255,255,255,.16)",
+                        boxShadow: "0 4px 30px #0000001a",
                     }}>
                         <div><img src={ele.img} alt="error" className={style.img} /></div>
                         <div className={style.details}>

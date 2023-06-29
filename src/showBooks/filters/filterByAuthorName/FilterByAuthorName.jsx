@@ -11,6 +11,7 @@ function FilterByAuthorName() {
 
   function handleChangeCheckBox(e) {
     const checkedValue = e.target.value;
+    console.log(checkedValue)
 
     if (e.target.checked) {
       const checkboxes = document.getElementsByName("author");

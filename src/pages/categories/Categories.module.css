@@ -6,6 +6,7 @@
 
 .wrapper {
     display: flex;
+    background-color: #F9FAFF
 }
 
 .allFilter {
@@ -14,10 +15,12 @@
     padding-left: 5rem;
     padding-top: 2.5rem;
     margin: 2.5rem 0rem 1rem 0rem;
+    background-color: #F9FAFF
 }
 
 .allBooks {
     width: 70vw;
     padding-left: 5rem;
     margin: 2.5rem 0rem 1rem 0rem;
+    background-color: #F9FAFF
 }
