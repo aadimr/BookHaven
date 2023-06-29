@@ -86,11 +86,15 @@ export const filterByAuthorName = createAsyncThunk(
   async (authorName, { rejectWithValue }) => {
     try {
       const response = await fetch(
-        `https://647c4884c0bae2880ad0867a.mockapi.io/CRUD?author_Name=${authorName}`
+        `https://647c4884c0bae2880ad0867a.mockapi.io/CRUD`
       );
-      const result = await response.json();
-      console.log(result)
-      return result;
+      const data = await response.json();
+
+      const filteredData = data.filter((item) => {
+        const itemPrice = item.author_Name;
+        return itemPrice === authorName;
+      });
+      return filteredData;
     } catch (error) {
       return rejectWithValue(error);
     }
@@ -99,20 +103,25 @@ export const filterByAuthorName = createAsyncThunk(
 
 // filterByPrice action
 export const filterByPrice = createAsyncThunk(
-  "filterByAuthorName",
+  "filterByPrice",
   async (priceRange, { rejectWithValue }) => {
     try {
       const response = await fetch(
-        `https://647c4884c0bae2880ad0867a.mockapi.io/CRUD?author_Name=${priceRange}`
+        `https://647c4884c0bae2880ad0867a.mockapi.io/CRUD`
       );
-      const result = await response.json();
-      console.log(result)
-      return result;
+      const data = await response.json();
+
+      const filteredData = data.filter((item) => {
+        const itemPrice = item.price;
+        return itemPrice >= priceRange.minValue && itemPrice <= priceRange.maxValue;
+      });
+      return filteredData;
     } catch (error) {
       return rejectWithValue(error);
     }
   }
 );
+
 
 export const BooksDetail = createSlice({
   name: "Book",
@@ -179,24 +188,24 @@ export const BooksDetail = createSlice({
       .addCase(filterByAuthorName.fulfilled, (state, action) => {
         state.loading = false;
         state.books = action.payload;
-        console.log(action.payload)
+        // console.log(action.payload)
       })
       .addCase(filterByAuthorName.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error;
       })
-      // .addCase(filterByPrice.pending, (state) => {
-      //   state.loading = true;
-      // })
-      // .addCase(filterByPrice.fulfilled, (state, action) => {
-      //   state.loading = false;
-      //   state.books = action.payload;
-      //   console.log(action.payload)
-      // })
-      // .addCase(filterByPrice.rejected, (state, action) => {
-      //   state.loading = false;
-      //   state.error = action.error;
-      // });
+      .addCase(filterByPrice.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(filterByPrice.fulfilled, (state, action) => {
+        state.books = action.payload;
+        state.loading = false;
+        // console.log(action.payload)
+      })
+      .addCase(filterByPrice.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      });
   },
 });
 

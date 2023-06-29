@@ -12,8 +12,6 @@ function FilterByPrice() {
   function handleChangeCheckBox(e) {
     const checkedValue = e.target.value;
     const [minValue, maxValue] = checkedValue.split("-");
-    console.log(minValue,maxValue)
-    console.log(checkedValue)
 
     if (e.target.checked) {
       const checkboxes = document.getElementsByName("priceRange");
@@ -23,7 +21,7 @@ function FilterByPrice() {
         }
       });
 
-      dispatch(filterByPrice({ minPrice: minValue, maxPrice: maxValue }));
+      dispatch(filterByPrice({ minValue, maxValue }));
     } else{
       dispatch(showBook());
     }
