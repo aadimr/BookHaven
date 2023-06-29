@@ -1,12 +1,12 @@
 import style from "./Categories.module.css"
 import AllBooks from "../../showBooks/allBooks/AllBooks";
-import AllFilter from "../../showBooks/filters/allFilters/AllFilter";
+import FilterByAuthorName from "../../showBooks/filterByAuthorName/FilterByAuthorName";
 
 function Categories() {
 
   return (
     <div className={style.wrapper}>
-      <div className={style.allFilter}><AllFilter /></div>
+      <div className={style.allFilter}><FilterByAuthorName/></div>
       <div className={style.allBooks}><AllBooks /></div>
     </div>
   )

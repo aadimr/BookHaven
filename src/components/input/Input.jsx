@@ -1,9 +1,8 @@
-import style from "./Input.module.css"
 
-function Input({className,placeholder,type,refs,onChange,name,value,onBlur}) {
+function Input({className,placeholder,type,refs,onChange,name,value,onBlur,checked}) {
   return (
     <div>
-      <input className={className} placeholder={placeholder} type={type} ref={refs} onChange={onChange} name={name} value={value} onBlur={onBlur}/>
+      <input className={className} checked={checked} placeholder={placeholder} type={type} ref={refs} onChange={onChange} name={name} value={value} onBlur={onBlur}/>
     </div>
   )
 }

@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { showBook } from "../../store/BooksSlice";
-import { Card } from "@mui/material";
 import OptionMenu from "./OptionMenu";
 import StarIcon from '@mui/icons-material/Star';
 import Buttons from "../../components/button/Button";
@@ -26,12 +25,7 @@ function AllBooks() {
         <div className={style.wrapper}>
             <div className={style.bookDetails}>
                 {books && books.map((ele, index) => (
-                    <Card key={index} sx={{
-                        display: "flex",
-                        gap: "2rem",
-                        backgroundColor: "rgba(255,255,255,.16)",
-                        boxShadow: "0 4px 30px #0000001a",
-                    }}>
+                    <div key={index} className={style.bookCard}>
                         <div><img src={ele.img} alt="error" className={style.img} /></div>
                         <div className={style.details}>
                             <div className={style.bookNameAndOptionIcon}>
@@ -58,7 +52,7 @@ function AllBooks() {
                                 },
                             }} name={"Add to cart"} />
                         </div>
-                    </Card>
+                    </div>
                 ))}
             </div>
         </div>

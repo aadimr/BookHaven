@@ -1,33 +1,40 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-.img{
+.bookCard {
+    display: flex;
+    gap: 2rem;
+    border-bottom: 2px solid lightGray;
+    width: 50rem;
+}
+
+.img {
     width: 8rem;
     height: 10rem;
 }
 
-.reviewAndPrice{
+.reviewAndPrice {
     display: flex;
     justify-content: space-between;
 }
 
-.details{
+.details {
     display: flex;
     flex-direction: column;
     gap: .3rem;
 }
 
-.bookDetails{
+.bookDetails {
     margin: 3rem 0rem 5rem 0rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-.bookNameAndOptionIcon{
+.bookNameAndOptionIcon {
     display: flex;
     justify-content: space-between;
     font-weight: 500;
@@ -37,7 +44,7 @@
     width: 25rem;
 }
 
-.optionMenu{
+.optionMenu {
     margin-top: .2rem;
 }
 
@@ -45,7 +52,7 @@
     color: #3E8ED0;
 }
 
-.By{
+.By {
     color: #3E8ED0;
     font-weight: 500;
 }
@@ -56,7 +63,7 @@
     gap: .1rem;
 }
 
-.reviewStar p span{
+.reviewStar p span {
     color: #3E8ED0;
     font-weight: 500;
 }
