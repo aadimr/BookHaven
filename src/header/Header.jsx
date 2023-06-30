@@ -1,17 +1,13 @@
 import Buttons from "../components/button/Button";
-import Input from "../components/input/Input";
 import style from "./Header.module.css"
 import Cart from "../components/cart/Cart";
-import SearchIcon from '@mui/icons-material/Search';
+import SearchPanel from "./searchPanel/SearchPanel";
 
 function Header() {
   return (
     <div className={style.mainContainer}>
       <img src={process.env.PUBLIC_URL + '/bookHavenLogo.png'} alt="error" className={style.img} />
-      <div className={style.inputDiv}>
-        <Input className={style.input} placeholder={"Search book by author or publisher"} />
-        <SearchIcon className={style.searchLogo} />
-      </div>
+      <SearchPanel/>
       <div className={style.cartBtn}>
         <Cart />
         <Buttons sx={{

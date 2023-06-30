@@ -97,6 +97,34 @@ export const filterByAuthorName = createAsyncThunk(
   }
 );
 
+// filterBySearchPanel action
+
+export const filterBySearchPanel = createAsyncThunk(
+  "filterBySearchPanel",
+  async (searchFilter, { rejectWithValue }) => {
+    try {
+      console.log(searchFilter)
+      const response = await fetch(
+        `https://647c4884c0bae2880ad0867a.mockapi.io/CRUD`
+      );
+      const result = await response.json();
+
+     const filteredBooks = result.filter((items) => {
+      if(!searchFilter){
+        return items;
+      }else if(items.book_Name.toLowerCase().includes(searchFilter.toLowerCase()) || items.author_Name.toLowerCase().includes(searchFilter.toLowerCase())){
+        return items;
+      }
+     })
+
+      return filteredBooks;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
+
+
 
 export const BooksDetail = createSlice({
   name: "Book",
@@ -168,6 +196,17 @@ export const BooksDetail = createSlice({
         state.loading = false;
         state.error = action.error;
       })
+      .addCase(filterBySearchPanel.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(filterBySearchPanel.fulfilled, (state, action) => {
+        state.loading = false;
+        state.books = action.payload;
+      })
+      .addCase(filterBySearchPanel.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error;
+      });
   },
 });
 
