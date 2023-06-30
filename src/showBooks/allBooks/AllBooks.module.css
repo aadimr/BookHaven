@@ -46,6 +46,7 @@
 
 .optionMenu {
     margin-top: .2rem;
+    cursor: pointer;
 }
 
 .price {

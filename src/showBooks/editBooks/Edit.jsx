@@ -52,7 +52,6 @@ function EditBooks() {
 
     return (
         <div className={style.wrapper}>
-            <h1 className={style.h1}>Edit Book</h1>
             <Card
                 sx={{
                     width: "50vw",
@@ -60,10 +59,15 @@ function EditBooks() {
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
+                    backgroundColor: "rgba(255,255,255,.2)",
+                    boxShadow: "0 4px 30px #0000001a"
                 }}
             >
                 <CardContent>
                     <form onSubmit={handleSubmit}>
+                        <div className={style.heading}>
+                            <p>Edit your book</p>
+                        </div>
                         <div className={style.inputDiv}>
                             <label>Image URL:</label>
                             <Input

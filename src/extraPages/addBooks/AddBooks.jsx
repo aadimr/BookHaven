@@ -34,13 +34,18 @@ function AddBooks() {
     <div className={style.wrapper}>
       <Card sx={{
         width: "50vw",
-        height: "90vh",
+        minHeight: "90vh",
         display: "flex",
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        backgroundColor: "rgba(255,255,255,.2)",
+        boxShadow: "0 4px 30px #0000001a"
       }}>
         <CardContent>
           <form onSubmit={handleSubmit}>
+            <div className={style.heading}>
+              <p>Add your book</p>
+            </div>
             <div className={style.inputDiv}>
             <label>Image URL:</label>
             <Input className={style.input} placeholder={"Enter Image URL"} name={"img"} value={values.img} onChange={handleChange} onBlur={handleBlur} />

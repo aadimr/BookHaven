@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useDispatch } from "react-redux";
 import { deleteBook } from '../../store/BooksSlice';
 import { Link } from "react-router-dom"
+import style from "./OptionMenu.module.css"
 
 function OptionMenu({ id }) {
     const [anchorEl, setAnchorEl] = useState(null);
@@ -39,7 +40,7 @@ function OptionMenu({ id }) {
                 }}
                 sx={{ marginTop: "1rem" }}
             >
-                <Link to={`/edit/${id}`}><MenuItem onClick={handleClose}>Edit</MenuItem></Link>
+                <Link to={`/edit/${id}`} className={style.link}><MenuItem onClick={handleClose}>Edit</MenuItem></Link>
                 <MenuItem onClick={() => handleOnClick(id)}>Delete</MenuItem>
             </Menu>
         </div>

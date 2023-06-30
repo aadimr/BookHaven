@@ -2,6 +2,7 @@ import { useState } from "react";
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from "react-router-dom";
+import style from "./More.module.css"
 
 function More() {
 
@@ -31,7 +32,7 @@ function More() {
             >
                 <MenuItem onClick={handleClose}>Login</MenuItem>
                 <MenuItem onClick={handleClose}>Cart</MenuItem>
-                <Link to="/AddBooks "><MenuItem onClick={handleClose}>Add books</MenuItem></Link>
+                <Link to="/AddBooks" className={style.link}><MenuItem onClick={handleClose}>Add books</MenuItem></Link>
             </Menu>
         </div>
 

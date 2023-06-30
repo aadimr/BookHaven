@@ -1,40 +1,47 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-.wrapper{
+.wrapper {
     display: flex;
     flex-direction: column;
     gap: 3rem;
     padding: 3rem 0rem;
     justify-content: center;
     align-items: center;
+    background-color: #F9FAFF;
 }
 
-.input{
+.input {
     width: 30vw;
     height: 6vh;
     padding-left: 1rem;
     font-size: 1rem;
 }
 
-.btnDiv{
+.btnDiv {
     display: flex;
     justify-content: center;
 }
 
-.inputDiv{
+.inputDiv {
     margin-bottom: 1rem;
 }
 
-.errorMessage{
+.errorMessage {
     color: red;
     width: 30vw;
 }
 
-.h1{
+.heading {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
     color: #3E8ED0;
-    text-decoration: underline;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Ysabeau Infant', sans-serif;
 }
