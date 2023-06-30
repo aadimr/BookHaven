@@ -48,47 +48,7 @@ function FilterByAuthorName() {
 export default FilterByAuthorName;
 
 
-// import React from 'react';
-// import Input from '../../../components/input/Input';
-// import { authorName } from './authorData';
-// import style from './FilterByAuthorName.module.css';
-// import { filterByAuthorName, clearFilter } from '../../../store/BooksSlice';
-// import { useDispatch } from 'react-redux';
 
-// function FilterByAuthorName() {
-//   const dispatch = useDispatch();
-
-//   function handleChangeCheckBox(e) {
-//     const checkedValue = e.target.value;
-//     if (e.target.checked) {
-//       dispatch(filterByAuthorName(checkedValue));
-//     } else {
-//       dispatch(clearFilter());
-//     }
-//   }
-
-//   return (
-//     <div className={style.wrapper}>
-//       <h3 className={style.h3}>Filter by Author Name</h3>
-//       <div className={style.filterWrapper}>
-//         {authorName.map((ele, index) => (
-//           <span key={index} className={style.span}>
-//             <Input
-//               type="checkbox"
-//               className={style.input}
-//               name="author"
-//               value={ele}
-//               onChange={handleChangeCheckBox}
-//             />
-//             {ele}
-//           </span>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default FilterByAuthorName;
 
 
 
