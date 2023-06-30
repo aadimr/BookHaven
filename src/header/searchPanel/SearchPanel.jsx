@@ -3,14 +3,18 @@ import style from "./SearchPanel.module.css"
 import SearchIcon from '@mui/icons-material/Search';
 import { useDispatch } from 'react-redux';
 import { filterBySearchPanel } from "../../store/BooksSlice";
+import { useNavigate } from "react-router-dom"
 
 function SearchPanel() {
 
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     function handleChange(e) {
         const val = e.target.value
-        // console.log(val)
+        if (val.trim() !== "") {
+            navigate("/categories")
+        }
         dispatch(filterBySearchPanel(val))
     }
 

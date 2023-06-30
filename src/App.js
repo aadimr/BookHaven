@@ -1,7 +1,6 @@
 import Home from "./pages/home/Home"
 import Categories from "./pages/categories/Categories"
 import About from "./pages/about/About"
-import Blog from "./pages/blog/Blog"
 import Contect from "./pages/contect/Contect"
 import './App.css';
 import Header from './header/Header';
@@ -23,7 +22,6 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/about" element={<About />} />
-          <Route path="/blog" element={<Blog />} />
           <Route path="/contect" element={<Contect />} />
           <Route path="/AddBooks" element={<AddBooks />} />
           <Route path="/edit/:id" element={<EditBooks />} />
