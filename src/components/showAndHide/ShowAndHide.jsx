@@ -7,7 +7,7 @@ function ShowAndHide({children}) {
   const [showNavbar, setShowNavbar] = useState(false)
 
   useEffect(() => {
-    if(location.pathname === "/singUp"){
+    if(location.pathname === "/singUp" || location.pathname === "/logIn"){
         setShowNavbar(false)
     }else{
         setShowNavbar(true)

@@ -1,4 +1,4 @@
-import style from "./SingUp.module.css"
+import style from "./LogIn.module.css"
 import Input from "../../components/input/Input";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -16,7 +16,7 @@ const initialValues = {
     confirm_Password: "",
 }
 
-function SingUP() {
+function LogIn() {
 
     const dispatch = useDispatch()
 
@@ -44,14 +44,14 @@ function SingUP() {
                 <CardContent>
                     <form onSubmit={handleSubmit}>
                         <div className={style.heading}>
-                            <p>Sign Up</p>
-                            <p className={style.aboutAccess}>Create your account to get full access</p>
+                            <p>Log In</p>
+                            <p className={style.aboutAccess}>Enter Login details to get access</p>
                         </div>
-                        <div className={style.inputDiv}>
+                        {/* <div className={style.inputDiv}>
                             <label>Full Name:</label>
                             <Input className={style.input} placeholder={"Enter your name"} name={"user_Name"} value={values.user_Name} onChange={handleChange} onBlur={handleBlur} />
                             {errors.user_Name && touched.user_Name ? <p className={style.errorMessage}>*{errors.user_Name}</p> : null}
-                        </div>
+                        </div> */}
                         <div className={style.inputDiv}>
                             <label>Email Address:</label>
                             <Input className={style.input} placeholder={"Enter your email"} name={"email"} value={values.email} onChange={handleChange} onBlur={handleBlur} />
@@ -62,11 +62,11 @@ function SingUP() {
                             <Input className={style.input} placeholder={"Enter your password"} name={"password"} value={values.password} onChange={handleChange} onBlur={handleBlur} />
                             {errors.password && touched.password ? <p className={style.errorMessage}>*{errors.password}</p> : null}
                         </div>
-                        <div className={style.inputDiv}>
+                        {/* <div className={style.inputDiv}>
                             <label>Confirm Password:</label>
                             <Input className={style.input} placeholder={"Enter your confirm password"} name={"confirm_Password"} value={values.confirm_Password} onChange={handleChange} onBlur={handleBlur} />
                             {errors.confirm_Password && touched.confirm_Password ? <p className={style.errorMessage}>*{errors.confirm_Password}</p> : null}
-                        </div>
+                        </div> */}
                         <div className={style.btnDiv}>
                             <Buttons type={"submit"} name={"Submit"} sx={{
                                 width: "15vw",
@@ -78,7 +78,7 @@ function SingUP() {
                                     backgroundColor: "#C8E2F7",
                                 },
                             }} />
-                            <p>Already have an account? <Link to="/logIn" className={style.link}><span className={style.loginText}>Login</span></Link> here</p>
+                            <p>Don’t have an account?<Link to="/singUp" className={style.link}><span className={style.loginText}>SignUp</span></Link> here</p>
                         </div>
                     </form>
                 </CardContent>
@@ -87,4 +87,4 @@ function SingUP() {
     )
 }
 
-export default SingUP;
+export default LogIn;
