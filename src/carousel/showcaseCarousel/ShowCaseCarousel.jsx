@@ -8,9 +8,9 @@ import RightArrow from '../carouselArrows/RightArrow';
 
 function MyCarousel() {
     const images = [
-        process.env.PUBLIC_URL + '/img1.jpeg',
-        process.env.PUBLIC_URL + '/img2.jpeg',
-        process.env.PUBLIC_URL + '/img3.jpeg',
+        process.env.PUBLIC_URL + '/img1.png',
+        process.env.PUBLIC_URL + '/img2.png',
+        process.env.PUBLIC_URL + '/img3.png',
       ];
 
   const settings = {

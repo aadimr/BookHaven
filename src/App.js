@@ -21,6 +21,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path="/categories" element={<Categories />} />
+          {/* <Route path="/categories/:authorName" element={<Categories/>}/> */}
           <Route path="/about" element={<About />} />
           <Route path="/contect" element={<Contect />} />
           <Route path="/AddBooks" element={<AddBooks />} />
