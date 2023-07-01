@@ -9,6 +9,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AddBooks from "./extraPages/addBooks/AddBooks"
 import EditBooks from "./showBooks/editBooks/Edit"
 import Footer from "./footer/Footer"
+import SingUP from "./header/singUp/SingUp";
+import ShowAndHide from "./components/showAndHide/ShowAndHide";
 
 
 function App() {
@@ -16,21 +18,27 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
-        <Navbar />
+        <ShowAndHide>
+          <Header />
+          <Navbar />
+        </ShowAndHide>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path="/categories" element={<Categories />} />
-          {/* <Route path="/categories/:authorName" element={<Categories/>}/> */}
+          <Route path="/singUp" element={<SingUP />} />
           <Route path="/about" element={<About />} />
           <Route path="/contect" element={<Contect />} />
           <Route path="/AddBooks" element={<AddBooks />} />
           <Route path="/edit/:id" element={<EditBooks />} />
         </Routes>
-        <Footer />
+        <ShowAndHide>
+          <Footer />
+        </ShowAndHide>
       </BrowserRouter>
     </div>
   );
 }
 
 export default App;
+
+

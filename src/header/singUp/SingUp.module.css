@@ -1,0 +1,61 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #F9FAFF;
+}
+
+.input{
+    width: 30vw;
+    height: 6vh;
+    padding-left: 1rem;
+    font-size: 1rem;
+}
+
+.btnDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 5.5rem;
+    gap: 1rem;
+    font-size: 1.2rem;
+}
+
+.inputDiv{
+    margin-bottom: 1rem;
+}
+
+.errorMessage{
+    color: red;
+    width: 30vw;
+}
+
+.heading{
+    height: 5rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color:#3E8ED0;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Ysabeau Infant', sans-serif;
+}
+
+.aboutAccess{
+    font-size: 1rem;
+}
+
+.loginText{
+    color: #3E8ED0;
+    cursor: pointer;
+}

@@ -30,7 +30,6 @@ function More() {
                 }}
                 sx={{ marginTop: "1rem" }}
             >
-                <MenuItem onClick={handleClose}>Login</MenuItem>
                 <MenuItem onClick={handleClose}>Cart</MenuItem>
                 <Link to="/AddBooks" className={style.link}><MenuItem onClick={handleClose}>Add books</MenuItem></Link>
             </Menu>

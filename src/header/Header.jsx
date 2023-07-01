@@ -2,6 +2,7 @@ import Buttons from "../components/button/Button";
 import style from "./Header.module.css"
 import Cart from "../components/cart/Cart";
 import SearchPanel from "./searchPanel/SearchPanel";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -10,6 +11,7 @@ function Header() {
       <SearchPanel/>
       <div className={style.cartBtn}>
         <Cart />
+        <Link to="/singUp">
         <Buttons sx={{
           marginRight: "8rem",
           height: "3.5rem",
@@ -23,6 +25,7 @@ function Header() {
             backgroundColor: "#C8E2F7",
           },
         }} name={"Sign in"} />
+        </Link>
       </div>
     </div>
   )

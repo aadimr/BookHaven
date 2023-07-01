@@ -3,7 +3,6 @@ import { authorName } from './authorData';
 import style from './FilterByAuthorName.module.css';
 import { useDispatch } from 'react-redux';
 import { filterByAuthorName, showBook } from '../../store/BooksSlice';
-import { Link } from 'react-router-dom';
 
 function FilterByAuthorName() {
   const dispatch = useDispatch();
@@ -20,7 +19,7 @@ function FilterByAuthorName() {
       });
 
       dispatch(filterByAuthorName(checkedValue));
-    } else{
+    } else {
       dispatch(showBook())
     }
   }

@@ -4,7 +4,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Buttons from "../../components/button/Button";
 import { useFormik } from "formik";
-import { bestSellingBookSchema } from "../../schemas/schema";
+import { bestSellingBookSchema } from "../../schemas/bookSchema";
 import { useDispatch, useSelector } from "react-redux";
 import { updateBook } from "../../store/BooksSlice";
 import { useParams } from "react-router-dom";

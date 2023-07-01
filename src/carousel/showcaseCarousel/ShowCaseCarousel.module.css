@@ -10,12 +10,10 @@
 }
 
 .img {
-    /* width: 80vw; */
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
 }
 
 .mainContainer {
-    /* width: 80vw; */
     margin: auto;
 }
