@@ -4,10 +4,11 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Buttons from "../../components/button/Button";
 import { useFormik } from "formik";
-import { userSignUpSchema } from "../../schemas/userSchema";
+// import { userSignUpSchema } from "../../schemas/userSchema";
 import { useDispatch } from 'react-redux';
 import { createBook } from "../../store/BooksSlice";
 import { Link } from "react-router-dom";
+// import { userLogInSchema } from "../../schemas/userLoginSchema";
 
 const initialValues = {
     user_Name: "",
@@ -22,7 +23,7 @@ function LogIn() {
 
     const { values, handleBlur, errors, handleChange, handleSubmit, touched } = useFormik({
         initialValues: initialValues,
-        validationSchema: userSignUpSchema,
+        // validationSchema: userLogInSchema,
         onSubmit: (values, action) => {
             dispatch(createBook(values));
             action.resetForm();

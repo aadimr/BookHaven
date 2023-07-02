@@ -7,15 +7,15 @@
 
 //     const inputRef = useRef(null)
 
-//     function handleClick(){
+//     function handleClick() {
 //         inputRef.current.click();
 //     }
 
 //     return (
 //         <div>
 //             <div onClick={handleClick} className={style.mainContainer}>
-//                 {image ? <img src={URL.createObjectURL(image)} alt="error" className={style.image}/>:<CloudDownloadIcon sx={{fontSize:"5rem",color:"#00acee"}}/>}
-//                 <Input type={"file"} refs={inputRef} style={{ display: "none" }} onChange={onChange} onBlur={onBlur}/>
+//                 {image ? <img src={URL.createObjectURL(image)} alt="error" className={style.image} /> : <CloudDownloadIcon sx={{ fontSize: "2rem", color: "#00acee" }} />}
+//                 <Input type={"file"} refs={inputRef} style={{ display: "none" }} onChange={onChange} onBlur={onBlur} />
 //             </div>
 //         </div>
 //     )

@@ -11,7 +11,7 @@ function Header() {
       <SearchPanel/>
       <div className={style.cartBtn}>
         <Cart />
-        <Link to="/singUp">
+        <Link to="/logIn">
         <Buttons sx={{
           marginRight: "8rem",
           height: "3.5rem",

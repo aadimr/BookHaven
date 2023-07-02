@@ -6,8 +6,9 @@ import Buttons from "../../components/button/Button";
 import { useFormik } from "formik";
 import { userSignUpSchema } from "../../schemas/userSchema";
 import { useDispatch } from 'react-redux';
-import { createBook } from "../../store/BooksSlice";
-import { Link } from "react-router-dom";
+import { createUser } from "../../store/UserSlice";
+import { Link, useNavigate } from "react-router-dom";
+import { checkEmailExists } from "../../schemas/userSchema";
 
 const initialValues = {
     user_Name: "",
@@ -17,17 +18,37 @@ const initialValues = {
 }
 
 function SingUP() {
+    const navigate = useNavigate()
 
     const dispatch = useDispatch()
 
-    const { values, handleBlur, errors, handleChange, handleSubmit, touched } = useFormik({
+    const { values, handleBlur, errors, handleChange, handleSubmit, touched, setFieldError } = useFormik({
         initialValues: initialValues,
         validationSchema: userSignUpSchema,
-        onSubmit: (values, action) => {
-            dispatch(createBook(values));
-            action.resetForm();
-        }
+        // onSubmit: (values, action) => {
+        //     dispatch(createUser(values));
+        //     action.resetForm();
+        //     navigate("/logIn")
+        // }
+        onSubmit: async (values, action) => {
+            try {
+              const { email } = values;
+              const emailExists = await checkEmailExists(email);
+              if (emailExists) {
+                setFieldError('email', 'Email already exists');
+              } else {
+                dispatch(createUser(values));
+                action.resetForm();
+                navigate("/logIn");
+              }
+            } catch (error) {
+              console.error(error);
+            }
+          }
+          
     })
+
+    console.log(values)
 
 
     return (
