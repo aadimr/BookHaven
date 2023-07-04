@@ -1,5 +1,5 @@
 import style from "./Header.module.css"
-import Cart from "../components/cart/Cart";
+import CartLogo from "../components/cart/CartLogo";
 import SearchPanel from "./searchPanel/SearchPanel";
 import LogOut from "./logOut/LogOut";
 
@@ -10,7 +10,7 @@ function Header() {
       <img src={process.env.PUBLIC_URL + '/bookHavenLogo.png'} alt="error" className={style.img} />
       <SearchPanel/>
       <div className={style.cartBtn}>
-        <Cart />
+        <CartLogo />
         <LogOut/>
       </div>
     </div>

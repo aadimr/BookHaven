@@ -30,7 +30,7 @@ function More() {
                 }}
                 sx={{ marginTop: "1rem" }}
             >
-                <MenuItem onClick={handleClose}>Cart</MenuItem>
+                <Link to="/cart" className={style.link}><MenuItem onClick={handleClose}>Cart</MenuItem></Link>
                 <Link to="/AddBooks" className={style.link}><MenuItem onClick={handleClose}>Add books</MenuItem></Link>
             </Menu>
         </div>

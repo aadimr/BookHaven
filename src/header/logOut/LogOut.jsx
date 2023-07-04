@@ -7,11 +7,10 @@ import MenuArrow from "../menuArrow/MenuArrow";
 function LogOut() {
 
     const loggedInuserName = JSON.parse(localStorage.getItem('details'));
-    console.log(loggedInuserName)
 
     return (
         <div>
-            {loggedInuserName ? <div className={style.nameAndArrow}><p className={style.LoggedInuserName}>{loggedInuserName[0].user_Name}</p><span><MenuArrow/></span></div> :
+            {loggedInuserName ? <div className={style.nameAndArrow}><p className={style.LoggedInuserName}>{loggedInuserName.user_Name}</p><span><MenuArrow /></span></div> :
                 <Link to="/logIn">
                     <Buttons sx={{
                         marginRight: "8rem",
@@ -27,7 +26,7 @@ function LogOut() {
                         },
                     }} name={"Sign in"} />
                 </Link>
-             } 
+            }
         </div>
     )
 }

@@ -1,0 +1,15 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    min-height: 100vh;
+    background-color: #F9FAFF;
+    font-family: "Roboto", sans-serif;
+    color: #454E6D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

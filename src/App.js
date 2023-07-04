@@ -12,6 +12,7 @@ import Footer from "./footer/Footer"
 import SingUP from "./header/singUp/SingUp";
 import ShowAndHide from "./components/showAndHide/ShowAndHide";
 import LogIn from "./header/logIn/LogIn";
+import Cart from "./extraPages/cart/Cart";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contect" element={<Contect />} />
           <Route path="/AddBooks" element={<AddBooks />} />
+          <Route path="/cart" element={<Cart/>}/>
           <Route path="/edit/:id" element={<EditBooks />} />
         </Routes>
         <ShowAndHide>
