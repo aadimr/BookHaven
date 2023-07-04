@@ -22,14 +22,10 @@ function SingUP() {
 
     const dispatch = useDispatch()
 
-    const { values, handleBlur, errors, handleChange, handleSubmit, touched, setFieldError } = useFormik({
+    const { values, handleBlur, errors, handleChange, handleSubmit, touched, validateForm, setFieldError } = useFormik({
         initialValues: initialValues,
         validationSchema: userSignUpSchema,
-        // onSubmit: (values, action) => {
-        //     dispatch(createUser(values));
-        //     action.resetForm();
-        //     navigate("/logIn")
-        // }
+        validateOnChange: true,
         onSubmit: async (values, action) => {
             try {
               const { email } = values;
@@ -48,6 +44,12 @@ function SingUP() {
           
     })
 
+    const handleFormSubmit = async (e) => {
+        e.preventDefault();
+        await validateForm();
+        handleSubmit();
+      };
+
     console.log(values)
 
 
@@ -63,7 +65,7 @@ function SingUP() {
                 boxShadow: "0 4px 30px #0000001a"
             }}>
                 <CardContent>
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleFormSubmit}>
                         <div className={style.heading}>
                             <p>Sign Up</p>
                             <p className={style.aboutAccess}>Create your account to get full access</p>
@@ -75,7 +77,7 @@ function SingUP() {
                         </div>
                         <div className={style.inputDiv}>
                             <label>Email Address:</label>
-                            <Input className={style.input} placeholder={"Enter your email"} name={"email"} value={values.email} onChange={handleChange} onBlur={handleBlur} />
+                            <Input className={style.input} placeholder={"Enter your email"} name={"email"} value={values.email} onChange={handleChange} onBlur={handleBlur}/>
                             {errors.email && touched.email ? <p className={style.errorMessage}>*{errors.email}</p> : null}
                         </div>
                         <div className={style.inputDiv}>

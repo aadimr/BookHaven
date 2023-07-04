@@ -4,29 +4,38 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Buttons from "../../components/button/Button";
 import { useFormik } from "formik";
-// import { userSignUpSchema } from "../../schemas/userSchema";
-import { useDispatch } from 'react-redux';
-import { createBook } from "../../store/BooksSlice";
-import { Link } from "react-router-dom";
-// import { userLogInSchema } from "../../schemas/userLoginSchema";
+import { Link, useNavigate } from "react-router-dom";
+import { userLogInSchema } from "../../schemas/userLoginSchema";
+import { checkEmailExistsForLogIn } from "../../schemas/userLoginSchema";
 
 const initialValues = {
-    user_Name: "",
     email: "",
     password: "",
-    confirm_Password: "",
 }
 
 function LogIn() {
 
-    const dispatch = useDispatch()
+    const navigate = useNavigate()
 
-    const { values, handleBlur, errors, handleChange, handleSubmit, touched } = useFormik({
+    const { values, handleBlur, errors, handleChange, handleSubmit, touched, setFieldError } = useFormik({
         initialValues: initialValues,
-        // validationSchema: userLogInSchema,
-        onSubmit: (values, action) => {
-            dispatch(createBook(values));
-            action.resetForm();
+        validationSchema: userLogInSchema,
+        validateOnChange: true,
+        onSubmit: async (values, action) => {
+            try {
+                const { email, password } = values;
+                const emailExists = await checkEmailExistsForLogIn(email, password);
+                if (!emailExists) {
+                    setFieldError('email', 'Email not exists');
+                    setFieldError("password", "Wrong password")
+                } else {
+                    console.log("allGood")
+                    action.resetForm();
+                    navigate("/");
+                }
+            } catch (error) {
+                console.error(error);
+            }
         }
     })
 

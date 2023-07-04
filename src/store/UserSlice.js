@@ -24,7 +24,6 @@ export const createUser = createAsyncThunk(
   }
 );
 
-
 export const UsersDetail = createSlice({
     name: "User",
     initialState: {

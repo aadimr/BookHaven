@@ -18,7 +18,7 @@ export const checkEmailExists = async (email) => {
             throw new Error('Failed to check email existence');
         }
         const data = await response.json();
-        return data.length > 0; // Return true if data length is greater than 0 (email exists), false otherwise
+        return data.length > 0;
     } catch (error) {
         throw new Error('Failed to check email existence');
     }
