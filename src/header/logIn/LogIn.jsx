@@ -26,10 +26,9 @@ function LogIn() {
                 const { email, password } = values;
                 const emailExists = await checkEmailExistsForLogIn(email, password);
                 if (!emailExists) {
-                    setFieldError('email', 'Email not exists');
-                    setFieldError("password", "Wrong password")
+                    setFieldError();
+                    setFieldError("password", "Email or Password is wrong")
                 } else {
-                    console.log("allGood")
                     action.resetForm();
                     navigate("/");
                 }

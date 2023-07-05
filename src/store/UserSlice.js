@@ -4,7 +4,6 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export const createUser = createAsyncThunk(
   "createUser",
   async (data, { rejectWithValue }) => {
-    console.log(data)
     const response = await fetch(
       "https://64a05a68ed3c41bdd7a73ca1.mockapi.io/userInfo/userInfo",
       {
@@ -24,6 +23,35 @@ export const createUser = createAsyncThunk(
   }
 );
 
+// update action
+export const updateUser = createAsyncThunk(
+  "updateUser",
+  async (data, { rejectWithValue }) => {
+    console.log(data.id)
+    const response = await fetch(
+      `https://64a05a68ed3c41bdd7a73ca1.mockapi.io/userInfo/userInfo/${data.id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data),
+      }
+    );
+    try {
+      const result = await response.json();
+      const {user_Name, email, addCart, addBook, id} = result
+      const details = {user_Name, email, addCart, addBook, id}
+      localStorage.setItem('details', JSON.stringify(details));
+      return result;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
+
+
+
 export const UsersDetail = createSlice({
     name: "User",
     initialState: {
@@ -42,6 +70,17 @@ export const UsersDetail = createSlice({
             state.users.push(action.payload);
           })
           .addCase(createUser.rejected, (state, action) => {
+            state.loading = false;
+            state.error = action.error;
+          })
+          .addCase(updateUser.pending, (state) => {
+            state.loading = true;
+          })
+          .addCase(updateUser.fulfilled, (state, action) => {
+            state.loading = false;
+            state.users = action.payload;
+          })
+          .addCase(updateUser.rejected, (state, action) => {
             state.loading = false;
             state.error = action.error;
           })

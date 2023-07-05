@@ -20,7 +20,7 @@ function MenuArrow() {
     function handleLogOut(){
         localStorage.clear()
         handleClose()
-        navigate("/")
+        navigate("/logIn")
     }
 
     return (

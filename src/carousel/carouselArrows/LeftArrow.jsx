@@ -14,6 +14,7 @@ function LeftArrow(props){
         justifyContent: "center",
         alignItems: "center",
         padding: "4px",
+        zIndex:"1"
         }}
       onClick={onClick}
     ></div>

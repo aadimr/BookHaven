@@ -2,7 +2,7 @@ import * as Yup from "yup";
 
 export const userLogInSchema = Yup.object({
     email: Yup.string().email().required("Please enter your email"),
-    password: Yup.string().min(6).required("Please enter your password"),
+    password: Yup.string().required("Please enter your password"),
 });
 
 export const checkEmailExistsForLogIn = async (email, password) => {
@@ -12,17 +12,19 @@ export const checkEmailExistsForLogIn = async (email, password) => {
       throw new Error('Failed to fetch user data');
     }
     const data = await response.json();
-    console.log(data)
-
     if (data.length > 0) {
       const user = data[0];
       if (user.password === password) {
     
-           const {email, user_Name, addBook, addCart} = user
-           const userDetails = {email, user_Name, addBook, addCart}
+           const {email, user_Name, addBook, addCart, id} = user
+           const userDetails = {email, user_Name, addBook, addCart, id}
 
             localStorage.setItem("details",JSON.stringify(userDetails))
+      }else if(user.password !== password){
+           return false
       }
+    }else{
+      return false
     }
 
     return true;

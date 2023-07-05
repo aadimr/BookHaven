@@ -5,7 +5,8 @@ import { useSelector } from "react-redux";
 import { showBook } from "../../store/BooksSlice";
 import OptionMenu from "./OptionMenu";
 import StarIcon from '@mui/icons-material/Star';
-import Buttons from "../../components/button/Button";
+import AddToCartButton from "../addToCartButton/AddToCartButton";
+import { updateUser } from "../../store/UserSlice";
 
 
 function AllBooks() {
@@ -21,11 +22,27 @@ function AllBooks() {
         return <h2>Loading...</h2>
     }
 
+    const loggedInuserDetails = JSON.parse(localStorage.getItem('details'));
+
+    function handleClick(id) {
+        if (loggedInuserDetails) {
+            const userCart = [...loggedInuserDetails.addCart];
+            const selectedBook = books.find(ele => ele.id === id);
+
+            if (selectedBook) {
+                userCart.push(selectedBook);
+                loggedInuserDetails.addCart = userCart;
+                dispatch(updateUser({ id, ...loggedInuserDetails }))
+            }
+        }
+    }
+
+
     return (
         <div className={style.wrapper}>
             <div className={style.bookDetails}>
-                {books && books.map((ele, index) => (
-                    <div key={index} className={style.bookCard}>
+                {books && books.map((ele) => (
+                    <div key={ele.id} className={style.bookCard}>
                         <div><img src={ele.img} alt="error" className={style.img} /></div>
                         <div className={style.details}>
                             <div className={style.bookNameAndOptionIcon}>
@@ -38,19 +55,7 @@ function AllBooks() {
                                 <span><StarIcon sx={{ fontSize: "medium", marginTop: ".3rem", color: "#FFD700" }} /></span>
                             </div>
                             <h3 className={style.price}>₹{ele.price}</h3>
-                            <Buttons sx={{
-                                marginRight: "8rem",
-                                height: "2rem",
-                                width: "8rem",
-                                textTransform: "capitalize",
-                                fontSize: "1rem",
-                                backgroundColor: "transparent",
-                                color: "#3E8ED0",
-                                border: "1px solid",
-                                '&:hover': {
-                                    backgroundColor: "#C8E2F7",
-                                },
-                            }} name={"Add to cart"} />
+                            <AddToCartButton onClick={() => handleClick(ele.id)} />
                         </div>
                     </div>
                 ))}
