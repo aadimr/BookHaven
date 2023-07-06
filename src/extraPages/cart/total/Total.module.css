@@ -1,0 +1,29 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.header {
+    border-bottom: 2px solid lightgray;
+    height: 4rem;
+    margin: 0rem 2rem 0rem 2rem;
+}
+
+.subTotalAndItem{
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 2rem 0rem 2rem;
+}
+
+.subTotalAndItem p{
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.btn{
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 2rem 0rem 2rem;
+    border: 2px solid;
+}

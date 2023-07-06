@@ -30,7 +30,8 @@ function AllBooks() {
             const selectedBook = books.find(ele => ele.id === id);
 
             if (selectedBook) {
-                userCart.push(selectedBook);
+                const selectedBookWithQuantity = Object.assign({ quantity: 1 }, selectedBook);
+                userCart.push(selectedBookWithQuantity);
                 loggedInuserDetails.addCart = userCart;
                 dispatch(updateUser({ id, ...loggedInuserDetails }))
             }

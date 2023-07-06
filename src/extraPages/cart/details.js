@@ -1,0 +1,1 @@
+export const tableHeaders = ["Product","Price","Quantity","Total"]

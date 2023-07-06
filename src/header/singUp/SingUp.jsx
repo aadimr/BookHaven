@@ -28,29 +28,27 @@ function SingUP() {
         validateOnChange: true,
         onSubmit: async (values, action) => {
             try {
-              const { email } = values;
-              const emailExists = await checkEmailExists(email);
-              if (emailExists) {
-                setFieldError('email', 'Email already exists');
-              } else {
-                dispatch(createUser(values));
-                action.resetForm();
-                navigate("/logIn");
-              }
+                const { email } = values;
+                const emailExists = await checkEmailExists(email);
+                if (emailExists) {
+                    setFieldError('email', 'Email already exists');
+                } else {
+                    dispatch(createUser(values));
+                    action.resetForm();
+                    navigate("/logIn");
+                }
             } catch (error) {
-              console.error(error);
+                console.error(error);
             }
-          }
-          
+        }
+
     })
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
         await validateForm();
         handleSubmit();
-      };
-
-    console.log(values)
+    };
 
 
     return (
@@ -77,7 +75,7 @@ function SingUP() {
                         </div>
                         <div className={style.inputDiv}>
                             <label>Email Address:</label>
-                            <Input className={style.input} placeholder={"Enter your email"} name={"email"} value={values.email} onChange={handleChange} onBlur={handleBlur}/>
+                            <Input className={style.input} placeholder={"Enter your email"} name={"email"} value={values.email} onChange={handleChange} onBlur={handleBlur} />
                             {errors.email && touched.email ? <p className={style.errorMessage}>*{errors.email}</p> : null}
                         </div>
                         <div className={style.inputDiv}>

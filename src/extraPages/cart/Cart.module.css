@@ -9,7 +9,67 @@
     background-color: #F9FAFF;
     font-family: "Roboto", sans-serif;
     color: #454E6D;
+}
+
+.cartItemWrapper {
+    display: flex;
+}
+
+.cartItems {
+    width: 70vw;
+    min-height: 100vh;
+}
+
+.total {
+    width: 30vw;
+    min-height: 100vh;
+    border-left: 2px solid lightgray;
+    margin: 5rem 0rem 5rem 0rem;
+}
+
+.img {
+    height: 15rem;
+    width: 10rem;
+}
+
+.itemWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 5rem 5rem 5rem 5rem;
+    border-bottom: 2px solid lightgray;
+}
+
+.itemDetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.incAndDec {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.p{
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #3E8ED0;
+}
+
+.clearIcon{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.bookAndAuthorname{
+    color: #3E8ED0;
+    font-weight: 500;
+}
+
+.emptyCart{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
