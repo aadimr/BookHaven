@@ -12,7 +12,7 @@ import { useEffect } from "react";
 
 function Cart() {
 
-  const notifyOfInc = () => toast.success("Quantity increased", {
+  const notifyOfInc = () => toast.success("Quantity increased successfully", {
     position: "bottom-left",
     autoClose: 5000,
     hideProgressBar: false,
@@ -22,7 +22,17 @@ function Cart() {
     theme: "light",
   });
 
-  const notifyOfDec = () => toast.success("Quantity decreased", {
+  const notifyOfDec = () => toast.success("Quantity decreased successfully", {
+    position: "bottom-left",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    theme: "light",
+  });
+
+  const notifyOfDelete = () => toast.success("Item Deleted successfully", {
     position: "bottom-left",
     autoClose: 5000,
     hideProgressBar: false,
@@ -58,7 +68,6 @@ function Cart() {
         addCart: updatedCart
       };
       dispatch(updateUserCartItemQuantity(updatedUser));
-      // localStorage.setItem("details", JSON.stringify(updatedUser));
       notifyOfInc();
     }
   }
@@ -76,11 +85,22 @@ function Cart() {
         addCart: updatedCart
       };
       dispatch(updateUserCartItemQuantity(updatedUser));
-      // localStorage.setItem("details", JSON.stringify(updatedUser));
       notifyOfDec();
     }
   }
-  
+
+  function handleClickDelete(id) {
+    if (showLoggedInUser) {
+      const updatedCart = showLoggedInUser.addCart.filter(ele => ele.id !== id)
+      const updatedUser = {
+        ...showLoggedInUser,
+        addCart: updatedCart
+      };
+      dispatch(updateUserCartItemQuantity(updatedUser));
+      notifyOfDelete()
+    }
+  }
+
 
   return (
     <div className={style.wrapper}>
@@ -91,7 +111,7 @@ function Cart() {
             {
               showLoggedInUser.addCart.map((ele) => (
                 <div className={style.itemWrapper} key={ele.id}>
-                  <div className={style.clearIcon}><ClearIcon /></div>
+                  <div className={style.clearIcon}><ClearIcon sx={{ cursor: "pointer" }} onClick={() => handleClickDelete(ele.id)} /></div>
                   <div className={style.itemDetails}>
                     <div>
                       <img src={ele.img} className={style.img} />
@@ -99,11 +119,11 @@ function Cart() {
                       <p><span className={style.bookAndAuthorname}>Author name: </span>{ele.author_Name}</p>
                     </div>
                     <div className={style.incAndDec}>
-                      <AddIcon onClick={() => handleClickInc(ele.id)} sx={{ backgroundColor: "#3E8ED0", width: "2rem", height: "2.5rem", borderRadius: ".5rem", color: "white" }} />
+                      <AddIcon onClick={() => handleClickInc(ele.id)} sx={{ backgroundColor: "#3E8ED0", width: "2rem", height: "2.5rem", borderRadius: ".5rem", color: "white", cursor: "pointer" }} />
                       <h2>{ele.quantity}</h2>
-                      <RemoveIcon onClick={() => handleClickDec(ele.id)} sx={{ backgroundColor: "#3E8ED0", width: "2rem", height: "2.5rem", borderRadius: ".5rem", color: "white" }} />
+                      <RemoveIcon onClick={() => handleClickDec(ele.id)} sx={{ backgroundColor: "#3E8ED0", width: "2rem", height: "2.5rem", borderRadius: ".5rem", color: "white", cursor: "pointer" }} />
                     </div>
-                    <p className={style.p}>₹{ele.price*ele.quantity}</p>
+                    <p className={style.p}>₹{ele.price * ele.quantity}</p>
                   </div>
                 </div>
               ))

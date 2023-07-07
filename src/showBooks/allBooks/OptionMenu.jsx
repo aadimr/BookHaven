@@ -38,7 +38,7 @@ function OptionMenu({ id }) {
                 MenuListProps={{
                     'aria-labelledby': 'basic-button',
                 }}
-                sx={{ marginTop: "1rem" }}
+                sx={{ marginTop: "1rem", display: "none" }}
             >
                 <Link to={`/edit/${id}`} className={style.link}><MenuItem onClick={handleClose}>Edit</MenuItem></Link>
                 <MenuItem onClick={() => handleOnClick(id)}>Delete</MenuItem>

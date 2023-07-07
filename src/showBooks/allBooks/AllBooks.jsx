@@ -8,9 +8,21 @@ import StarIcon from '@mui/icons-material/Star';
 import AddToCartButton from "../addToCartButton/AddToCartButton";
 import { updateUser } from "../../store/UserSlice";
 import { showUser } from "../../store/UserSlice";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function AllBooks() {
+
+    const toastOfItemAdded = () => (toast.success('Added successfully', {
+        position: "bottom-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "light",
+    }))
 
     const dispatch = useDispatch();
 
@@ -22,7 +34,7 @@ function AllBooks() {
         dispatch(showUser())
     }, [])
 
-  
+
     const { books, loading } = useSelector((state) => state.app)
     useEffect(() => {
         dispatch(showBook());
@@ -37,24 +49,37 @@ function AllBooks() {
     function handleClick(id) {
         if (showLoggedInUserDetails) {
             const userCart = [...showLoggedInUserDetails.addCart];
-            const selectedBook = books.find(ele => ele.id === id);
+            const existingCartItemIndex = userCart.findIndex((item) => item.id === id);
 
-            if (selectedBook) {
-                const selectedBookWithQuantity = Object.assign({ quantity: 1 }, selectedBook);
-                userCart.push(selectedBookWithQuantity);
-                const updatedUser = {
-                    ...showLoggedInUserDetails,
-                    addCart: userCart
+            if (existingCartItemIndex !== -1) {
+                const updatedCartItem = {
+                    ...userCart[existingCartItemIndex],
+                    quantity: userCart[existingCartItemIndex].quantity + 1,
                 };
-                console.log(updatedUser)
-                dispatch(updateUser({ id, ...updatedUser }))
+                userCart[existingCartItemIndex] = updatedCartItem;
+            } else {
+                const selectedBook = books.find((ele) => ele.id === id);
+                if (selectedBook) {
+                    const selectedBookWithQuantity = { ...selectedBook, quantity: 1 };
+                    userCart.push(selectedBookWithQuantity);
+                }
             }
+
+            const updatedUser = {
+                ...showLoggedInUserDetails,
+                addCart: userCart,
+            };
+            dispatch(updateUser({ id: showLoggedInUserDetails.id, ...updatedUser }));
         }
+        toastOfItemAdded();
     }
+
+
 
 
     return (
         <div className={style.wrapper}>
+            <ToastContainer />
             <div className={style.bookDetails}>
                 {books && books.map((ele) => (
                     <div key={ele.id} className={style.bookCard}>

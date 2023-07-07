@@ -49,7 +49,6 @@ export const deleteBook = createAsyncThunk(
     );
     try {
       const result = await response.json();
-      console.log(result)
       return result;
     } catch (error) {
       return rejectWithValue(error);
@@ -89,7 +88,6 @@ export const filterByAuthorName = createAsyncThunk(
         `https://647c4884c0bae2880ad0867a.mockapi.io/CRUD?author_Name=${authorName}`
       );
       const result = await response.json();
-      console.log(result)
       return result;
     } catch (error) {
       return rejectWithValue(error);
@@ -103,7 +101,6 @@ export const filterBySearchPanel = createAsyncThunk(
   "filterBySearchPanel",
   async (searchFilter, { rejectWithValue }) => {
     try {
-      console.log(searchFilter)
       const response = await fetch(
         `https://647c4884c0bae2880ad0867a.mockapi.io/CRUD`
       );
