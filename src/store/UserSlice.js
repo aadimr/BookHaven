@@ -23,6 +23,22 @@ export const createUser = createAsyncThunk(
   }
 );
 
+// read action
+export const showUser = createAsyncThunk(
+  "showUser",
+  async (_, { rejectWithValue }) => {
+    const response = await fetch(
+      "https://64a05a68ed3c41bdd7a73ca1.mockapi.io/userInfo/userInfo"
+    );
+    try {
+      const result = await response.json();
+      return result;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
+
 // updateUserCart action
 export const updateUser = createAsyncThunk(
   "updateUser",
@@ -40,10 +56,10 @@ export const updateUser = createAsyncThunk(
     );
     try {
       const result = await response.json();
-      console.log(result.addCart)
-      const { user_Name, email, addCart, addBook, id } = result
-      const details = { user_Name, email, addCart, addBook, id }
-      localStorage.setItem('details', JSON.stringify(details));
+      // console.log(result.addCart)
+      // const { user_Name, email, addCart, addBook, id } = result
+      // const details = { user_Name, email, addCart, addBook, id }
+      // localStorage.setItem('details', JSON.stringify(details));
       return result;
     } catch (error) {
       return rejectWithValue(error);
@@ -101,6 +117,17 @@ export const UsersDetail = createSlice({
         state.users.push(action.payload);
       })
       .addCase(createUser.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error;
+      })
+      .addCase(showUser.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(showUser.fulfilled, (state, action) => {
+        state.loading = false;
+        state.users = action.payload;
+      })
+      .addCase(showUser.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error;
       })

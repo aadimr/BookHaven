@@ -16,8 +16,8 @@ export const checkEmailExistsForLogIn = async (email, password) => {
       const user = data[0];
       if (user.password === password) {
     
-           const {email, user_Name, addBook, addCart, id} = user
-           const userDetails = {email, user_Name, addBook, addCart, id}
+           const {email, id} = user
+           const userDetails = {email, id}
 
             localStorage.setItem("details",JSON.stringify(userDetails))
       }else if(user.password !== password){

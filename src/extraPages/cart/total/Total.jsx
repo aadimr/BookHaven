@@ -1,11 +1,25 @@
 import style from "./Total.module.css"
 import Buttons from "../../../components/button/Button"
+import { showUser } from "../../../store/UserSlice"
+import { useDispatch, useSelector } from "react-redux"
+import { useEffect } from "react"
 
 function Total() {
 
+  const dispatch = useDispatch()
+
   const user = JSON.parse(localStorage.getItem("details"))
-  const cartItemAmt = user.addCart
-  const totalAmount = cartItemAmt.length ? cartItemAmt.map(ele => ele.price).reduce((x, y) => +x + +y):null;
+
+  const { users } = useSelector(state => state.user)
+
+  useEffect(() => {
+      dispatch(showUser())
+  }, [])
+
+  const showLoggedInUser = user ? users.find(ele => ele.id === user.id) : null
+
+  const cartItemAmt = showLoggedInUser.addCart
+  const totalAmount = cartItemAmt.length ? cartItemAmt.map(ele => ele.price*ele.quantity).reduce((x, y) => +x + +y):null;
 
   return (
     <div className={style.wrapper}>

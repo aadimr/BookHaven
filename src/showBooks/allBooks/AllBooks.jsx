@@ -7,12 +7,22 @@ import OptionMenu from "./OptionMenu";
 import StarIcon from '@mui/icons-material/Star';
 import AddToCartButton from "../addToCartButton/AddToCartButton";
 import { updateUser } from "../../store/UserSlice";
+import { showUser } from "../../store/UserSlice";
 
 
 function AllBooks() {
 
     const dispatch = useDispatch();
 
+    const loggedInuserDetails = JSON.parse(localStorage.getItem('details'));
+
+    const { users } = useSelector(state => state.user)
+
+    useEffect(() => {
+        dispatch(showUser())
+    }, [])
+
+  
     const { books, loading } = useSelector((state) => state.app)
     useEffect(() => {
         dispatch(showBook());
@@ -22,18 +32,22 @@ function AllBooks() {
         return <h2>Loading...</h2>
     }
 
-    const loggedInuserDetails = JSON.parse(localStorage.getItem('details'));
+    const showLoggedInUserDetails = loggedInuserDetails ? users.find(ele => ele.id === loggedInuserDetails.id) : null
 
     function handleClick(id) {
-        if (loggedInuserDetails) {
-            const userCart = [...loggedInuserDetails.addCart];
+        if (showLoggedInUserDetails) {
+            const userCart = [...showLoggedInUserDetails.addCart];
             const selectedBook = books.find(ele => ele.id === id);
 
             if (selectedBook) {
                 const selectedBookWithQuantity = Object.assign({ quantity: 1 }, selectedBook);
                 userCart.push(selectedBookWithQuantity);
-                loggedInuserDetails.addCart = userCart;
-                dispatch(updateUser({ id, ...loggedInuserDetails }))
+                const updatedUser = {
+                    ...showLoggedInUserDetails,
+                    addCart: userCart
+                };
+                console.log(updatedUser)
+                dispatch(updateUser({ id, ...updatedUser }))
             }
         }
     }

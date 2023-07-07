@@ -4,38 +4,93 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import ClearIcon from '@mui/icons-material/Clear';
 import Total from "./total/Total";
 import { updateUserCartItemQuantity } from "../../store/UserSlice";
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { showUser } from "../../store/UserSlice";
+import { useEffect } from "react";
 
 function Cart() {
+
+  const notifyOfInc = () => toast.success("Quantity increased", {
+    position: "bottom-left",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    theme: "light",
+  });
+
+  const notifyOfDec = () => toast.success("Quantity decreased", {
+    position: "bottom-left",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    theme: "light",
+  });
 
   const dispatch = useDispatch()
 
   const isLogIn = JSON.parse(localStorage.getItem("details"))
 
+  const { users } = useSelector(state => state.user)
+
+  useEffect(() => {
+    dispatch(showUser())
+  }, [])
+
+  const showLoggedInUser = isLogIn ? users.find(ele => ele.id === isLogIn.id) : null
+
   function handleClickInc(id) {
-    const inc = isLogIn.addCart.find(ele => ele.id === id)
-    inc.quantity += 1
-    dispatch(updateUserCartItemQuantity(isLogIn))
-    localStorage.setItem("details", JSON.stringify(isLogIn))
+    const incIndex = showLoggedInUser.addCart.findIndex(ele => ele.id === id);
+    if (incIndex !== -1) {
+      const updatedCart = [...showLoggedInUser.addCart];
+      const updatedItem = {
+        ...updatedCart[incIndex],
+        quantity: updatedCart[incIndex].quantity + 1
+      };
+      updatedCart[incIndex] = updatedItem;
+      const updatedUser = {
+        ...showLoggedInUser,
+        addCart: updatedCart
+      };
+      dispatch(updateUserCartItemQuantity(updatedUser));
+      // localStorage.setItem("details", JSON.stringify(updatedUser));
+      notifyOfInc();
+    }
   }
 
-  function handleClickDec(id){
-    const dec = isLogIn.addCart.find(ele => ele.id === id)
-    if(dec.quantity > 1){
-      dec.quantity -= 1
+  function handleClickDec(id) {
+    const decIndex = showLoggedInUser.addCart.findIndex(ele => ele.id === id);
+    if (decIndex !== -1 && showLoggedInUser.addCart[decIndex].quantity > 1) {
+      const updatedCart = [...showLoggedInUser.addCart];
+      updatedCart[decIndex] = {
+        ...updatedCart[decIndex],
+        quantity: updatedCart[decIndex].quantity - 1
+      };
+      const updatedUser = {
+        ...showLoggedInUser,
+        addCart: updatedCart
+      };
+      dispatch(updateUserCartItemQuantity(updatedUser));
+      // localStorage.setItem("details", JSON.stringify(updatedUser));
+      notifyOfDec();
     }
-    dispatch(updateUserCartItemQuantity(isLogIn))
-    localStorage.setItem("details", JSON.stringify(isLogIn))
   }
+  
 
   return (
     <div className={style.wrapper}>
-      {isLogIn && isLogIn.addCart.length ?
+      <ToastContainer />
+      {showLoggedInUser && showLoggedInUser.addCart.length ?
         <div className={style.cartItemWrapper}>
           <div className={style.cartItems}>
             {
-              isLogIn.addCart.map((ele) => (
-                <div className={style.itemWrapper}>
+              showLoggedInUser.addCart.map((ele) => (
+                <div className={style.itemWrapper} key={ele.id}>
                   <div className={style.clearIcon}><ClearIcon /></div>
                   <div className={style.itemDetails}>
                     <div>
@@ -48,7 +103,7 @@ function Cart() {
                       <h2>{ele.quantity}</h2>
                       <RemoveIcon onClick={() => handleClickDec(ele.id)} sx={{ backgroundColor: "#3E8ED0", width: "2rem", height: "2.5rem", borderRadius: ".5rem", color: "white" }} />
                     </div>
-                    <p className={style.p}>₹{ele.price}</p>
+                    <p className={style.p}>₹{ele.price*ele.quantity}</p>
                   </div>
                 </div>
               ))
