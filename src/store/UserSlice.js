@@ -56,10 +56,6 @@ export const updateUser = createAsyncThunk(
     );
     try {
       const result = await response.json();
-      // console.log(result.addCart)
-      // const { user_Name, email, addCart, addBook, id } = result
-      // const details = { user_Name, email, addCart, addBook, id }
-      // localStorage.setItem('details', JSON.stringify(details));
       return result;
     } catch (error) {
       return rejectWithValue(error);
@@ -85,10 +81,31 @@ export const updateUserCartItemQuantity = createAsyncThunk(
     );
     try {
       const result = await response.json();
-      console.log(result.addCart)
-      const { user_Name, email, addCart, addBook, id } = result
-      const details = { user_Name, email, addCart, addBook, id }
-      localStorage.setItem('details', JSON.stringify(details));
+      return result;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
+
+// updateUserAddbook action
+
+export const updateUserAddbook = createAsyncThunk(
+  "updateUserAddbook",
+  async (data, { rejectWithValue }) => {
+    console.log(data.id)
+    const response = await fetch(
+      `https://64a05a68ed3c41bdd7a73ca1.mockapi.io/userInfo/userInfo/${data.id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data),
+      }
+    );
+    try {
+      const result = await response.json();
       return result;
     } catch (error) {
       return rejectWithValue(error);
@@ -158,6 +175,21 @@ export const UsersDetail = createSlice({
         }
       })
       .addCase(updateUserCartItemQuantity.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error;
+      })
+      .addCase(updateUserAddbook.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(updateUserAddbook.fulfilled, (state, action) => {
+        state.loading = false;
+        const updatedUser = action.payload;
+        const userIndex = state.users.findIndex(user => user.id === updatedUser.id);
+        if (userIndex !== -1) {
+          state.users[userIndex] = updatedUser;
+        }
+      })
+      .addCase(updateUserAddbook.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error;
       })

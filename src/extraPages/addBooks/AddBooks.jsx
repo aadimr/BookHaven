@@ -5,8 +5,12 @@ import CardContent from '@mui/material/CardContent';
 import Buttons from "../../components/button/Button";
 import { useFormik } from "formik";
 import { bestSellingBookSchema } from "../../schemas/bookSchema";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { createBook } from "../../store/BooksSlice";
+import { updateUserAddbook } from "../../store/UserSlice";
+import { showUser } from "../../store/UserSlice";
+import { showBook } from "../../store/BooksSlice";
+import { useEffect } from "react";
 
 const initialValues = {
   img: "",
@@ -20,6 +24,26 @@ function AddBooks() {
 
   const dispatch = useDispatch()
 
+  const loggedInUser = JSON.parse(localStorage.getItem('details'));
+
+  const { users } = useSelector(state => state.user)
+
+  useEffect(() => {
+    dispatch(showUser())
+  }, [])
+
+  const loggedInuserDetails = loggedInUser && users.find(ele => ele.id === loggedInUser.id)
+
+  useEffect(() => {
+    dispatch(showBook())
+  }, [])
+
+  const { books } = useSelector(state => state.app)
+  
+
+
+ 
+
   const { values, handleBlur, errors, handleChange, handleSubmit, touched } = useFormik({
     initialValues: initialValues,
     validationSchema: bestSellingBookSchema,
@@ -28,6 +52,24 @@ function AddBooks() {
       action.resetForm();
     }
   })
+
+  useEffect(() => {
+    if (loggedInuserDetails) {
+      addUserAddbook();
+    }
+  }, [books]);
+
+  function addUserAddbook() {
+    if (loggedInuserDetails) {
+      const newAddBook = [...loggedInuserDetails.addBook];
+      newAddBook.push(books[books.length - 1]);
+      const updatedUser = {
+        ...loggedInuserDetails,
+        addBook: newAddBook,
+      };
+      dispatch(updateUserAddbook(updatedUser));
+    }
+  }
 
 
   return (
@@ -47,8 +89,8 @@ function AddBooks() {
               <p>Add your book</p>
             </div>
             <div className={style.inputDiv}>
-            <label>Image URL:</label>
-            <Input className={style.input} placeholder={"Enter Image URL"} name={"img"} value={values.img} onChange={handleChange} onBlur={handleBlur} />
+              <label>Image URL:</label>
+              <Input className={style.input} placeholder={"Enter Image URL"} name={"img"} value={values.img} onChange={handleChange} onBlur={handleBlur} />
               {errors.img && touched.img ? <p className={style.errorMessage}>*{errors.img}</p> : null}
             </div>
             <div className={style.inputDiv}>

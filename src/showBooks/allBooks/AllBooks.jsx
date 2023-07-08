@@ -87,7 +87,7 @@ function AllBooks() {
                         <div className={style.details}>
                             <div className={style.bookNameAndOptionIcon}>
                                 <p>{ele.book_Name}</p>
-                                <span className={style.optionMenu}><OptionMenu id={ele.id} /></span>
+                                <span className={style.optionMenu}><OptionMenu id={ele.id} style={{display:"none"}}/></span>
                             </div>
                             <p><span className={style.By}>By: </span>{ele.author_Name}</p>
                             <div className={style.reviewStar}>
