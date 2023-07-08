@@ -7,7 +7,7 @@ import { deleteBook, showBook } from '../../store/BooksSlice';
 import { Link } from "react-router-dom"
 import style from "./OptionMenu.module.css"
 
-function OptionMenu({ id, style }) {
+function OptionMenu({ id, styles }) {
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -27,7 +27,7 @@ function OptionMenu({ id, style }) {
     return (
         <div>
             <p onClick={handleClick}>
-                <BiDotsVerticalRounded style={style}/>
+                <BiDotsVerticalRounded style={styles}/>
             </p>
             <Menu
                 id="basic-menu"

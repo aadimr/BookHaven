@@ -14,7 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function AllBooks() {
 
-    const toastOfItemAdded = () => (toast.success('Added successfully', {
+    const toastOfItemAdded = () => (toast.success('Item Added to cart successfully', {
         position: "bottom-left",
         autoClose: 5000,
         hideProgressBar: false,
@@ -45,7 +45,6 @@ function AllBooks() {
     }
 
     const showLoggedInUserDetails = loggedInuserDetails ? users.find(ele => ele.id === loggedInuserDetails.id) : null
-
     function handleClick(id) {
         if (showLoggedInUserDetails) {
             const userCart = [...showLoggedInUserDetails.addCart];
@@ -76,7 +75,6 @@ function AllBooks() {
 
 
 
-
     return (
         <div className={style.wrapper}>
             <ToastContainer />
@@ -87,7 +85,8 @@ function AllBooks() {
                         <div className={style.details}>
                             <div className={style.bookNameAndOptionIcon}>
                                 <p>{ele.book_Name}</p>
-                                <span className={style.optionMenu}><OptionMenu id={ele.id} style={{display:"none"}}/></span>
+                                <span className={style.optionMenu}><OptionMenu id={ele.id}
+                                    styles={showLoggedInUserDetails && showLoggedInUserDetails.id === ele.userId ? { display: "inline" } : { display: "none" }} /></span>
                             </div>
                             <p><span className={style.By}>By: </span>{ele.author_Name}</p>
                             <div className={style.reviewStar}>

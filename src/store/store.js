@@ -5,7 +5,7 @@ import UsersDetail from "./UserSlice"
 export const store = configureStore({
   reducer: {
     app: BooksDetail,
-    user: UsersDetail
+    user: UsersDetail,
   },
 });
 

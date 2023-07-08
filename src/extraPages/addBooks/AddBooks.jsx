@@ -7,9 +7,7 @@ import { useFormik } from "formik";
 import { bestSellingBookSchema } from "../../schemas/bookSchema";
 import { useDispatch, useSelector } from 'react-redux';
 import { createBook } from "../../store/BooksSlice";
-import { updateUserAddbook } from "../../store/UserSlice";
 import { showUser } from "../../store/UserSlice";
-import { showBook } from "../../store/BooksSlice";
 import { useEffect } from "react";
 
 const initialValues = {
@@ -34,42 +32,16 @@ function AddBooks() {
 
   const loggedInuserDetails = loggedInUser && users.find(ele => ele.id === loggedInUser.id)
 
-  useEffect(() => {
-    dispatch(showBook())
-  }, [])
-
-  const { books } = useSelector(state => state.app)
-  
-
-
- 
 
   const { values, handleBlur, errors, handleChange, handleSubmit, touched } = useFormik({
     initialValues: initialValues,
     validationSchema: bestSellingBookSchema,
     onSubmit: (values, action) => {
+      values.userId = loggedInuserDetails.id
       dispatch(createBook(values));
       action.resetForm();
     }
   })
-
-  useEffect(() => {
-    if (loggedInuserDetails) {
-      addUserAddbook();
-    }
-  }, [books]);
-
-  function addUserAddbook() {
-    if (loggedInuserDetails) {
-      const newAddBook = [...loggedInuserDetails.addBook];
-      newAddBook.push(books[books.length - 1]);
-      const updatedUser = {
-        ...loggedInuserDetails,
-        addBook: newAddBook,
-      };
-      dispatch(updateUserAddbook(updatedUser));
-    }
-  }
 
 
   return (

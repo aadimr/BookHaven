@@ -1,8 +1,10 @@
 import Input from '../../components/input/Input';
-import { authorName } from './authorData';
 import style from './FilterByAuthorName.module.css';
 import { useDispatch } from 'react-redux';
 import { filterByAuthorName, showBook } from '../../store/BooksSlice';
+import { useEffect } from 'react';
+import { authorName } from './authorData';
+
 
 function FilterByAuthorName() {
   const dispatch = useDispatch();
@@ -19,17 +21,23 @@ function FilterByAuthorName() {
       });
 
       dispatch(filterByAuthorName(checkedValue));
-    } else {
+    }
+    else {
       dispatch(showBook())
     }
   }
+
+  useEffect(() => {
+    dispatch(showBook())
+  }, [])
+
 
   return (
     <div className={style.wrapper}>
       <h3 className={style.h3}>Filter by Author Name</h3>
       <div className={style.filterWrapper}>
         {authorName.map((ele, index) => (
-         <span key={index} className={style.span}>
+          <span key={index} className={style.span}>
             <Input
               type="checkbox"
               className={style.input}
