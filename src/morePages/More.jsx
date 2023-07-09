@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from "react-router-dom";
 import style from "./More.module.css"
+import { useDispatch, useSelector } from "react-redux";
+import { showUser } from "../store/UserSlice";
 
 function More() {
 
@@ -14,6 +16,18 @@ function More() {
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    const dispatch = useDispatch()
+
+    const loggedInUser = JSON.parse(localStorage.getItem("details"))
+
+    useEffect(() => {
+        dispatch(showUser())
+    }, [])
+
+    const { users } = useSelector(state => state.user)
+
+    const loggedInuserDetails = loggedInUser && users.find(ele => ele.id === loggedInUser.id)
 
     return (
         <div>
@@ -31,7 +45,7 @@ function More() {
                 sx={{ marginTop: "1rem" }}
             >
                 <Link to="/cart" className={style.link}><MenuItem onClick={handleClose}>Cart</MenuItem></Link>
-                <Link to="/AddBooks" className={style.link}><MenuItem onClick={handleClose}>Add books</MenuItem></Link>
+                <Link to={loggedInuserDetails ? "/AddBooks" : "/logIn"} className={style.link}><MenuItem onClick={handleClose}>Add books</MenuItem></Link>
             </Menu>
         </div>
 

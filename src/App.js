@@ -13,6 +13,7 @@ import SingUP from "./header/singUp/SingUp";
 import ShowAndHide from "./components/showAndHide/ShowAndHide";
 import LogIn from "./header/logIn/LogIn";
 import Cart from "./extraPages/cart/Cart";
+import PrivateRoutes from "./components/protectedRoute/PrivateRoutes";
 
 
 function App() {

@@ -10,6 +10,7 @@ import { updateUser } from "../../store/UserSlice";
 import { showUser } from "../../store/UserSlice";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from "react-router-dom";
 
 
 function AllBooks() {
@@ -24,7 +25,20 @@ function AllBooks() {
         theme: "light",
     }))
 
+    const bookDeletednotify = () => toast.success('Book deleted successfully', {
+        position: "bottom-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+
     const dispatch = useDispatch();
+
+    const navigate = useNavigate();
 
     const loggedInuserDetails = JSON.parse(localStorage.getItem('details'));
 
@@ -45,6 +59,7 @@ function AllBooks() {
     }
 
     const showLoggedInUserDetails = loggedInuserDetails ? users.find(ele => ele.id === loggedInuserDetails.id) : null
+
     function handleClick(id) {
         if (showLoggedInUserDetails) {
             const userCart = [...showLoggedInUserDetails.addCart];
@@ -69,8 +84,11 @@ function AllBooks() {
                 addCart: userCart,
             };
             dispatch(updateUser({ id: showLoggedInUserDetails.id, ...updatedUser }));
+            toastOfItemAdded();
+        }else{
+            navigate("/logIn")
         }
-        toastOfItemAdded();
+       
     }
 
 

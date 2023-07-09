@@ -9,6 +9,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateBook } from "../../store/BooksSlice";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const initialValues = {
     img: "",
@@ -19,6 +21,16 @@ const initialValues = {
 };
 
 function EditBooks() {
+
+    const bookEditnotify = () => toast.success('Book edited successfully', {
+        position: "bottom-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "light",
+    });
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -31,7 +43,8 @@ function EditBooks() {
             onSubmit: (values, action) => {
                 dispatch(updateBook({ id, ...values }));
                 action.resetForm();
-                navigate("/categories")
+                bookEditnotify()
+                // navigate("/categories")
             },
         });
 
@@ -52,6 +65,7 @@ function EditBooks() {
 
     return (
         <div className={style.wrapper}>
+            <ToastContainer />
             <Card
                 sx={{
                     width: "50vw",

@@ -1,11 +1,13 @@
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { BiDotsVerticalRounded } from 'react-icons/bi';
-import { useEffect, useState } from 'react';
-import { useDispatch,useSelector } from "react-redux";
-import { deleteBook, showBook } from '../../store/BooksSlice';
+import { useState } from 'react';
+import { useDispatch } from "react-redux";
+import { deleteBook } from '../../store/BooksSlice';
 import { Link } from "react-router-dom"
 import style from "./OptionMenu.module.css"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function OptionMenu({ id, styles }) {
     const [anchorEl, setAnchorEl] = useState(null);
@@ -19,6 +21,17 @@ function OptionMenu({ id, styles }) {
 
     const dispatch = useDispatch()
 
+    // const bookDeletednotify = () => toast.success('Book deleted successfully', {
+    //     position: "bottom-left",
+    //     autoClose: 5000,
+    //     hideProgressBar: false,
+    //     closeOnClick: true,
+    //     pauseOnHover: true,
+    //     draggable: true,
+    //     progress: undefined,
+    //     theme: "light",
+    //     });
+
     function handleOnClick(id) {
         dispatch(deleteBook(id))
         handleClose()
@@ -26,8 +39,9 @@ function OptionMenu({ id, styles }) {
 
     return (
         <div>
+            <ToastContainer />
             <p onClick={handleClick}>
-                <BiDotsVerticalRounded style={styles}/>
+                <BiDotsVerticalRounded style={styles} />
             </p>
             <Menu
                 id="basic-menu"
