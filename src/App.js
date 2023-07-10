@@ -33,7 +33,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contect" element={<Contect />} />
           <Route path="/AddBooks" element={<AddBooks />} />
-          <Route path="/cart" element={<Cart/>}/>
+          <Route path="/cart" element={<Cart />} />
           <Route path="/edit/:id" element={<EditBooks />} />
         </Routes>
         <ShowAndHide>

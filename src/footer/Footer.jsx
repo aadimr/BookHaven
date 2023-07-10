@@ -12,7 +12,7 @@ function Footer() {
             <li className={style.text}>Get the breathing space now, and we’ll extend your term at the other end year for go.</li>
             <ul className={style.icons}>
               {icons.map((ele, index) => (
-                <li key={index}><a href={ele.href} target="_blank" rel="noopener noreferrer">{ele.iconeName}</a></li>
+                <li key={index}><Link to={ele.href} target="_blank" className={style.link}>{ele.iconeName}</Link></li>
               ))}
             </ul>
           </ul>
