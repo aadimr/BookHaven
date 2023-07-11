@@ -17,7 +17,7 @@ function BestSellingBookEverCarousel() {
 
   useEffect(() => {
     dispatch(showBook());
-  }, []);
+  }, [dispatch]);
 
   if (loading) {
     return <h2>Loading...</h2>
