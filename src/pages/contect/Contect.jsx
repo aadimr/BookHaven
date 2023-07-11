@@ -8,6 +8,10 @@ import { getInTouch } from "../../store/GetInTouchSlice";
 import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { icons } from "./ContectLinkData";
+import { Link } from "react-router-dom"
+import { ImMobile2 } from 'react-icons/im';
+
 
 const initialValues = {
   name: "",
@@ -26,7 +30,7 @@ function Contect() {
     pauseOnHover: true,
     draggable: true,
     theme: "light",
-}))
+  }))
 
   const dispatch = useDispatch()
 
@@ -36,30 +40,30 @@ function Contect() {
     validationSchema: getInTouchSchema,
     onSubmit: async (values, action) => {
       try {
-          const { email } = values;
-          const emailExists = await checkEmailExists(email);
-          if (emailExists) {
-              setFieldError('email', 'Email already exists');
-          } else {
-              dispatch(getInTouch(values));
-              getInTouchNotify()
-              action.resetForm();
-          }
+        const { email } = values;
+        const emailExists = await checkEmailExists(email);
+        if (emailExists) {
+          setFieldError('email', 'Email already exists');
+        } else {
+          dispatch(getInTouch(values));
+          getInTouchNotify()
+          action.resetForm();
+        }
       } catch (error) {
-          console.error(error);
+        console.error(error);
       }
-  }
+    }
   })
 
 
   return (
     <div className={style.wrapper}>
-          <ToastContainer />
+      <ToastContainer />
       <form onSubmit={handleSubmit} className={style.mainDiv}>
         <p className={style.heading}>Get in touch</p>
         <div>
-        <textarea className={style.textarea} placeholder={"Enter Message"} name={"message"} value={values.message} onChange={handleChange} onBlur={handleBlur} />
-        {errors.message && touched.message ? <p className={style.errorMessage}>*{errors.message}</p> : null}
+          <textarea className={style.textarea} placeholder={"Enter Message"} name={"message"} value={values.message} onChange={handleChange} onBlur={handleBlur} />
+          {errors.message && touched.message ? <p className={style.errorMessage}>*{errors.message}</p> : null}
         </div>
         <div className={style.inputOfNameAndEmail}>
           <div>
@@ -85,8 +89,24 @@ function Contect() {
           '&:hover': {
             backgroundColor: "#C8E2F7",
           },
-        }} name={"send"} type={"submit"}/>
+        }} name={"send"} type={"submit"} />
       </form>
+      <div>
+        <div className={style.linkWrapper}>
+          {
+            icons.map((ele, index) => (
+              <div className={style.linkAndText} key={index}>
+                <Link to={ele.to} target={index !== 1 ? "_blank" : null} rel="noopener" className={style.link}>{ele.iconeName}</Link>
+                <p>{ele.text}</p>
+              </div>
+            ))
+          }
+          <div className={style.linkAndText}>
+            <p className={style.link}><ImMobile2 /></p>
+            <p>8777743278</p>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

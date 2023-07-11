@@ -14,6 +14,7 @@ import ShowAndHide from "./components/showAndHide/ShowAndHide";
 import LogIn from "./header/logIn/LogIn";
 import Cart from "./extraPages/cart/Cart";
 import PrivateRoutes from "./components/protectedRoute/PrivateRoutes";
+import { PrivateRoutesForLogInAndSingUp } from "./components/protectedRoute/PrivateRoutes";
 
 
 function App() {
@@ -28,13 +29,17 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path="/categories" element={<Categories />} />
-          <Route path="/singUp" element={<SingUP />} />
-          <Route path="/logIn" element={<LogIn />} />
           <Route path="/about" element={<About />} />
           <Route path="/contect" element={<Contect />} />
-          <Route path="/AddBooks" element={<AddBooks />} />
           <Route path="/cart" element={<Cart />} />
+          <Route element={<PrivateRoutes />}>
+          <Route path="/AddBooks" element={<AddBooks />} />
           <Route path="/edit/:id" element={<EditBooks />} />
+          </Route>
+          <Route element={<PrivateRoutesForLogInAndSingUp/>}>
+          <Route path="/singUp" element={<SingUP />} />
+          <Route path="/logIn" element={<LogIn />} />
+          </Route>
         </Routes>
         <ShowAndHide>
           <Footer />

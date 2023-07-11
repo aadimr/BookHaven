@@ -6,8 +6,6 @@ import { useDispatch } from "react-redux";
 import { deleteBook } from '../../store/BooksSlice';
 import { Link } from "react-router-dom"
 import style from "./OptionMenu.module.css"
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 function OptionMenu({ id, styles }) {
     const [anchorEl, setAnchorEl] = useState(null);
@@ -21,25 +19,17 @@ function OptionMenu({ id, styles }) {
 
     const dispatch = useDispatch()
 
-    // const bookDeletednotify = () => toast.success('Book deleted successfully', {
-    //     position: "bottom-left",
-    //     autoClose: 5000,
-    //     hideProgressBar: false,
-    //     closeOnClick: true,
-    //     pauseOnHover: true,
-    //     draggable: true,
-    //     progress: undefined,
-    //     theme: "light",
-    //     });
-
     function handleOnClick(id) {
-        dispatch(deleteBook(id))
-        handleClose()
+        if (window.confirm('Are you sure you want to delete this book?')) {
+            dispatch(deleteBook(id))
+            handleClose()
+          } else {
+            handleClose()
+          }
     }
 
     return (
         <div>
-            <ToastContainer />
             <p onClick={handleClick}>
                 <BiDotsVerticalRounded style={styles} />
             </p>

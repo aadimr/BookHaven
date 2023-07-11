@@ -104,7 +104,7 @@ function AllBooks() {
                             <div className={style.bookNameAndOptionIcon}>
                                 <p>{ele.book_Name}</p>
                                 <span className={style.optionMenu}><OptionMenu id={ele.id}
-                                    styles={showLoggedInUserDetails && showLoggedInUserDetails.id === ele.userId ? { display: "inline" } : { display: "none" }} /></span>
+                                    styles={showLoggedInUserDetails && showLoggedInUserDetails.id === ele.userId ? { display: "inline" } : { display: "none" }} notify={bookDeletednotify}/></span>
                             </div>
                             <p><span className={style.By}>By: </span>{ele.author_Name}</p>
                             <div className={style.reviewStar}>
