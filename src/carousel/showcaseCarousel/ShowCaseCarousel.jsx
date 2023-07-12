@@ -30,7 +30,7 @@ function MyCarousel() {
       <Slider {...settings} className={style.mainContainer}>
         {images.map((ele, index) => (
           <div className={style.image} key={index}>
-            <img src={ele} alt={`Image ${index}`} className={style.img} />
+            <img src={ele} alt="error" className={style.img} />
           </div>
         ))}
       </Slider>

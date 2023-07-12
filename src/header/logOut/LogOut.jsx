@@ -16,7 +16,7 @@ function LogOut() {
 
     useEffect(() => {
         dispatch(showUser())
-    }, [])
+    }, [dispatch])
 
     const showLoggedInUser = loggedInuserName ? users.find(ele => ele.id === loggedInuserName.id) : null
 

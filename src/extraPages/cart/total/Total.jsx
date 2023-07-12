@@ -17,7 +17,7 @@ function Total() {
 
   useEffect(() => {
       dispatch(showUser())
-  }, [])
+  }, [dispatch])
 
   const showLoggedInUser = user ? users.find(ele => ele.id === user.id) : null
 

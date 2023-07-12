@@ -13,7 +13,7 @@ function CartLogo() {
 
   useEffect(() => {
        dispatch(showUser())
-  },[])
+  },[dispatch])
 
   const { users } = useSelector(state => state.user)
 

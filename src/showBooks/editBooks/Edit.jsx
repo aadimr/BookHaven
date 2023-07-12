@@ -8,7 +8,6 @@ import { bestSellingBookSchema } from "../../schemas/bookSchema";
 import { useDispatch, useSelector } from "react-redux";
 import { updateBook } from "../../store/BooksSlice";
 import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -33,7 +32,6 @@ function EditBooks() {
     });
 
     const dispatch = useDispatch();
-    const navigate = useNavigate();
 
     const { values, handleBlur, errors, handleChange, handleSubmit, touched } =
         useFormik({
@@ -44,7 +42,6 @@ function EditBooks() {
                 dispatch(updateBook({ id, ...values }));
                 action.resetForm();
                 bookEditnotify()
-                // navigate("/categories")
             },
         });
 

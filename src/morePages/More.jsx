@@ -23,7 +23,7 @@ function More() {
 
     useEffect(() => {
         dispatch(showUser())
-    }, [])
+    }, [dispatch])
 
     const { users } = useSelector(state => state.user)
 

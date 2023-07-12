@@ -40,7 +40,7 @@ function AddBooks() {
 
   useEffect(() => {
     dispatch(showUser())
-  }, [])
+  }, [dispatch])
 
   const loggedInuserDetails = loggedInUser && users.find(ele => ele.id === loggedInUser.id)
 

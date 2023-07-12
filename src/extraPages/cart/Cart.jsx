@@ -50,7 +50,7 @@ function Cart() {
 
   useEffect(() => {
     dispatch(showUser())
-  }, [])
+  }, [dispatch])
 
   const showLoggedInUser = isLogIn ? users.find(ele => ele.id === isLogIn.id) : null
 
@@ -114,7 +114,7 @@ function Cart() {
                   <div className={style.clearIcon}><ClearIcon sx={{ cursor: "pointer" }} onClick={() => handleClickDelete(ele.id)} /></div>
                   <div className={style.itemDetails}>
                     <div>
-                      <img src={ele.img} className={style.img} />
+                      <img src={ele.img} alt="error" className={style.img} />
                       <p><span className={style.bookAndAuthorname}>Book name: </span>{ele.book_Name}</p>
                       <p><span className={style.bookAndAuthorname}>Author name: </span>{ele.author_Name}</p>
                     </div>

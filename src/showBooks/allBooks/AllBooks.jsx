@@ -46,13 +46,13 @@ function AllBooks() {
 
     useEffect(() => {
         dispatch(showUser())
-    }, [])
+    }, [dispatch])
 
 
     const { books, loading } = useSelector((state) => state.app)
     useEffect(() => {
         dispatch(showBook());
-    }, []);
+    }, [dispatch]);
 
     if (loading) {
         return <h2>Loading...</h2>

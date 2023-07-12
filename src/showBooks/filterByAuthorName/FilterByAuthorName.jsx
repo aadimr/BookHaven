@@ -29,7 +29,7 @@ function FilterByAuthorName() {
 
   useEffect(() => {
     dispatch(showBook())
-  }, [])
+  }, [dispatch])
 
 
   return (
