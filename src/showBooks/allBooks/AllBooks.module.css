@@ -68,3 +68,192 @@
     color: #3E8ED0;
     font-weight: 500;
 }
+
+
+/* responsive */
+
+
+@media screen and (max-width: 1300px) {
+
+    .bookCard {
+        display: flex;
+        gap: 2rem;
+        border-bottom: 2px solid lightGray;
+        width: 40rem;
+    }
+
+}
+
+
+@media screen and (max-width: 1050px) {
+
+    .bookCard {
+        display: flex;
+        gap: 2rem;
+        border-bottom: 2px solid lightGray;
+        width: 35rem;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+
+    .bookCard {
+        display: flex;
+        gap: 2rem;
+        border-bottom: 2px solid lightGray;
+        width: 50rem;
+    }
+
+} 
+
+@media screen and (max-width: 950px) {
+
+    .bookCard {
+        display: flex;
+        gap: 2rem;
+        border-bottom: 2px solid lightGray;
+        width: 45rem;
+    }
+
+} 
+
+@media screen and (max-width: 850px) {
+
+    .bookCard {
+        display: flex;
+        gap: 2rem;
+        border-bottom: 2px solid lightGray;
+        width: 40rem;
+    }
+
+} 
+
+@media screen and (max-width: 750px) {
+
+    .bookCard {
+        display: flex;
+        gap: 2rem;
+        border-bottom: 2px solid lightGray;
+        width: 35rem;
+    }
+
+} 
+
+@media screen and (max-width: 650px) {
+
+    .bookCard {
+        display: flex;
+        gap: 2rem;
+        border-bottom: 2px solid lightGray;
+        width: 30rem;
+    }
+
+    .bookNameAndOptionIcon {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 500;
+        font-size: 1.2rem;
+        color: #3E8ED0;
+        margin-bottom: .2rem;
+        width: 20rem;
+    }
+
+} 
+
+@media screen and (max-width: 600px) {
+
+    .bookCard {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: .5rem;
+        gap: 2rem;
+        border-bottom: 2px solid lightGray;
+        width: 25rem;
+    }
+
+    .bookNameAndOptionIcon {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 500;
+        font-size: 1.2rem;
+        color: #3E8ED0;
+        margin-bottom: .2rem;
+        width: 15rem;
+    }
+
+    .img {
+        width: 8rem;
+        height: 12rem;
+    }
+
+} 
+
+@media screen and (max-width: 515px) {
+
+    .bookCard {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: .5rem;
+        gap: 2rem;
+        border-bottom: 2px solid lightGray;
+        width: 20rem;
+    }
+
+    .bookNameAndOptionIcon {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 500;
+        font-size: 1.2rem;
+        color: #3E8ED0;
+        margin-bottom: .2rem;
+        width: 15rem;
+    }
+
+} 
+
+@media screen and (max-width: 430px) {
+
+    .bookCard {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: .5rem;
+        gap: 2rem;
+        border-bottom: 2px solid lightGray;
+        width: 15rem;
+    }
+
+    .bookNameAndOptionIcon {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 500;
+        font-size: 1.2rem;
+        color: #3E8ED0;
+        margin-bottom: .2rem;
+        width: 15rem;
+    }
+
+} 
+
+@media screen and (max-width: 345px) {
+
+    .bookCard {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: .5rem;
+        gap: 2rem;
+        border-bottom: 2px solid lightGray;
+        width: 12rem;
+    }
+
+    .bookNameAndOptionIcon {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 500;
+        font-size: 1.2rem;
+        color: #3E8ED0;
+        margin-bottom: .2rem;
+        width: 10rem;
+    }
+
+} 

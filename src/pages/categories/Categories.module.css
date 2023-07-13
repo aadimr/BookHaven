@@ -25,3 +25,38 @@
     margin: 2.5rem 0rem 1rem 0rem;
     background-color: #F9FAFF
 }
+
+/* responsive */
+
+@media screen and (max-width: 1000px) {
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: #F9FAFF
+    }
+
+    .allFilter {
+        width: 80vw;
+        border-right: 2px solid #F9FAFF;
+        padding-left: 5rem;
+        padding-top: 2.5rem;
+        margin: 2.5rem 0rem 1rem 0rem;
+        background-color: #F9FAFF
+    }
+
+}
+
+@media screen and (max-width: 365px) {
+
+    .allFilter {
+        width: 90vw;
+        border-right: 2px solid #F9FAFF;
+        padding-left: 5rem;
+        padding-top: 2.5rem;
+        margin: 2.5rem 0rem 1rem 0rem;
+        background-color: #F9FAFF
+    }
+
+} 
