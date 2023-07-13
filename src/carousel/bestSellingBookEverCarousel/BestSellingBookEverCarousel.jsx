@@ -46,7 +46,14 @@ function BestSellingBookEverCarousel() {
         <Slider {...settings}>
           {filteredBook && filteredBook
             .map((ele, index) => (
-              <Card sx={{ maxWidth: "12rem", maxHeight: "28rem" }} key={index}>
+              <Card sx={{
+                 maxWidth: "12rem",
+                 maxHeight: "28rem",
+                 '@media screen and (max-width: 1200px)': {
+                  maxWidth: "10rem",
+                  maxHeight: "28rem",
+                },
+                 }} key={index}>
                 <img src={ele.img} alt="error" className={style.img} />
                 <div className={style.details}>
                   <p className={style.book_Name}>{ele.book_Name}</p>

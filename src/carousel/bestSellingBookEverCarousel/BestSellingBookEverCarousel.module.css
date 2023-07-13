@@ -54,3 +54,20 @@
 .h3 {
     color: #3E8ED0;
 }
+
+/* responsive */
+
+@media screen and (max-width: 1200px) {
+    .book_Name {
+        font-weight: 500;
+        font-size: .7rem;
+        color: #3E8ED0;
+    }
+
+    .img {
+        width: 10rem;
+        height: 20rem;
+    }
+}
+
+

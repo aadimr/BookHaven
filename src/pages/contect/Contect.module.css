@@ -12,10 +12,11 @@
 }
 
 .textarea {
-    width: 50vw;
+    width: 785px;
     height: 30vh;
     padding: .7rem;
     font-size: 1.1rem;
+    background-color: #F9FAFF;
 }
 
 .inputOfNameAndEmail {
@@ -25,18 +26,20 @@
 
 .inputOfASeparateDiv {
     height: 7vh;
-    width: 24.4vw;
+    width: 385px;
     padding: .7rem;
+    background-color: #F9FAFF;
 }
 
 .input {
     height: 7vh;
-    width: 50vw;
+    width: 785px;
     padding: .7rem;
+    background-color: #F9FAFF;
 }
 
 .mainDiv {
-    width: 60vw;
+    min-width: 60vw;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -49,7 +52,7 @@
     font-family: 'Ysabeau Infant', sans-serif;
 }
 
-.errorMessage{
+.errorMessage {
     color: red;
 }
 
@@ -71,8 +74,170 @@
     color: #454E6D;
 }
 
-.linkAndText{
+.linkAndText {
     display: flex;
     gap: 1rem;
     align-items: center;
+}
+
+@media screen and (max-width: 1450px) {
+
+    .wrapper {
+        min-height: 100vh;
+        padding: 5rem 5rem;
+        display: flex;
+        align-items: center;
+        background-color: #F9FAFF;
+        flex-direction: column;
+    }
+
+    .contectDetails{
+        width: 60vw;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+
+    .textarea {
+        width: 685px;
+        height: 30vh;
+        padding: .7rem;
+        font-size: 1.1rem;
+        background-color: #F9FAFF;
+    }
+
+    .inputOfASeparateDiv {
+        height: 7vh;
+        width: 335px;
+        padding: .7rem;
+        background-color: #F9FAFF;
+    }
+    
+    .input {
+        height: 7vh;
+        width: 685px;
+        padding: .7rem;
+        background-color: #F9FAFF;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+
+    .textarea {
+        width: 585px;
+        height: 30vh;
+        padding: .7rem;
+        font-size: 1.1rem;
+        background-color: #F9FAFF;
+    }
+
+    .inputOfASeparateDiv {
+        height: 7vh;
+        width: 285px;
+        padding: .7rem;
+        background-color: #F9FAFF;
+    }
+    
+    .input {
+        height: 7vh;
+        width: 585px;
+        padding: .7rem;
+        background-color: #F9FAFF;
+    }
+
+}
+
+@media screen and (max-width: 650px) {
+
+    .textarea {
+        width: 485px;
+        height: 30vh;
+        padding: .7rem;
+        font-size: 1.1rem;
+        background-color: #F9FAFF;
+    }
+
+    .inputOfASeparateDiv {
+        height: 7vh;
+        width: 235px;
+        padding: .7rem;
+        background-color: #F9FAFF;
+    }
+    
+    .input {
+        height: 7vh;
+        width: 485px;
+        padding: .7rem;
+        background-color: #F9FAFF;
+    }
+
+    .linkAndText {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        word-break: break-all;
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+
+    .textarea {
+        width: 385px;
+        height: 30vh;
+        padding: .7rem;
+        font-size: 1.1rem;
+        background-color: #F9FAFF;
+    }
+
+    .inputOfASeparateDiv {
+        height: 7vh;
+        width: 185px;
+        padding: .7rem;
+        background-color: #F9FAFF;
+    }
+    
+    .input {
+        height: 7vh;
+        width: 385px;
+        padding: .7rem;
+        background-color: #F9FAFF;
+    }
+
+    .linkAndText {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        word-break: break-all;
+    }
+
+}
+
+
+@media screen and (max-width: 450px) {
+
+    .textarea {
+        width: 285px;
+        height: 30vh;
+        padding: .7rem;
+        font-size: 1.1rem;
+        background-color: #F9FAFF;
+    }
+
+    .inputOfASeparateDiv {
+        height: 7vh;
+        width: 135px;
+        padding: .7rem;
+        background-color: #F9FAFF;
+    }
+    
+    .input {
+        height: 7vh;
+        width: 285px;
+        padding: .7rem;
+        background-color: #F9FAFF;
+    }
+
 }

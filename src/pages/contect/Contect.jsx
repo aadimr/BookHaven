@@ -91,7 +91,7 @@ function Contect() {
           },
         }} name={"send"} type={"submit"} />
       </form>
-      <div>
+      <div className={style.contectDetails}>
         <div className={style.linkWrapper}>
           {
             icons.map((ele, index) => (

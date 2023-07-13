@@ -17,7 +17,7 @@ function Footer() {
             </ul>
           </ul>
           <ul className={style.bookCategoryAndSiteMap}>
-            <h3>Book Category</h3>
+            <h3 className={style.h3}>Book Category</h3>
             {bookCategory.map((ele, index) => (
               <li key={index}>{ele}</li>
             ))}
@@ -28,15 +28,15 @@ function Footer() {
             ))}
           </ul>
           <ul className={style.bookCategoryAndSiteMap}>
-            <h3>Site Map</h3>
+            <h3 className={style.h3}>Site Map</h3>
             {siteMap.map((ele, index) => (
               <Link key={index} to={ele.to} className={style.link}><li>{ele.name}</li></Link>
             ))}
           </ul>
-        </div>
+          </div>
       </div>
       <div className={style.copyRight}>
-        <p>Copyright ©2023 All rights reserved | This website is made with  by Aditya Shaw</p>
+        <p>Copyright ©2023 All rights reserved | This website is made by Aditya Shaw</p>
       </div>
     </>
   )
