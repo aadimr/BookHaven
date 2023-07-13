@@ -57,8 +57,35 @@
 
 /* responsive */
 
-@media screen and (max-width: 1200px) {
-    .book_Name {
+@media screen and (max-width: 1250px) {
+
+    .img {
+        width: 11rem;
+        height: 20rem;
+    }
+}
+
+@media screen and (max-width: 1170px) {
+
+    .img {
+        width: 13rem;
+        height: 20rem;
+    }
+    
+}
+
+@media screen and (max-width: 1075px) {
+
+    .img {
+        width: 11rem;
+        height: 20rem;
+    }
+    
+}
+
+@media screen and (max-width: 935px) {
+
+     .book_Name {
         font-weight: 500;
         font-size: .7rem;
         color: #3E8ED0;
@@ -68,6 +95,81 @@
         width: 10rem;
         height: 20rem;
     }
+    
 }
 
+@media screen and (max-width: 850px) {
+
+    .book_Name {
+       font-weight: 500;
+       font-size: .7rem;
+       color: #3E8ED0;
+   }
+
+   .img {
+       width: 12rem;
+       height: 20rem;
+   }
+   
+}
+
+@media screen and (max-width: 750px) {
+
+    .book_Name {
+       font-weight: 500;
+       font-size: .7rem;
+       color: #3E8ED0;
+   }
+
+   .img {
+       width: 11rem;
+       height: 20rem;
+   }
+   
+}
+
+@media screen and (max-width: 690px) {
+
+   .img {
+       width: 10rem;
+       height: 20rem;
+   }
+   
+}
+
+@media screen and (max-width: 620px) {
+
+    .img {
+        width: 13rem;
+        height: 20rem;
+    }
+    
+ }
+
+ @media screen and (max-width: 535px) {
+
+    .img {
+        width: 11rem;
+        height: 20rem;
+    }
+    
+ }
+
+ @media screen and (max-width: 450px) {
+
+    .img {
+        width: 10rem;
+        height: 20rem;
+    }
+    
+ }
+
+ @media screen and (max-width: 400px) {
+
+    .img {
+        width: 18rem;
+        height: 20rem;
+    }
+    
+ }
 
