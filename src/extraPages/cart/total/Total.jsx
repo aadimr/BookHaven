@@ -69,6 +69,12 @@ function Total() {
         '&:hover': {
             backgroundColor: "#C8E2F7",
         },
+        '@media screen and (max-width: 520px)': {
+          fontSize: "1rem",
+        },
+        '@media screen and (max-width: 400px)': {
+          fontSize: ".8rem",
+        },
       }}
       name={"Pay now"}
       onClick={handleClickPay}/>
