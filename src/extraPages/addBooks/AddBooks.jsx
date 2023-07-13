@@ -61,13 +61,25 @@ function AddBooks() {
     <div className={style.wrapper}>
       <ToastContainer />
       <Card sx={{
-        width: "50vw",
+        width: "750px",
         minHeight: "90vh",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "rgba(255,255,255,.2)",
-        boxShadow: "0 4px 30px #0000001a"
+        boxShadow: "0 4px 30px #0000001a",
+        '@media screen and (max-width: 900px)': {
+          width: "650px",
+        },
+        '@media screen and (max-width: 750px)': {
+          width: "500px",
+        },
+        '@media screen and (max-width: 600px)': {
+          width: "400px",
+        },
+        '@media screen and (max-width: 450px)': {
+          width: "350px",
+        },
       }}>
         <CardContent>
           <form onSubmit={handleSubmit}>

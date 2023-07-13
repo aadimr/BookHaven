@@ -1,10 +1,10 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-.wrapper{
+.wrapper {
     display: flex;
     height: 100vh;
     justify-content: center;
@@ -12,34 +12,70 @@
     background-color: #F9FAFF;
 }
 
-.input{
-    width: 30vw;
+.input {
+    width: 450px;
     height: 6vh;
     padding-left: 1rem;
     font-size: 1rem;
+    background-color: #F9FAFF;
 }
 
-.btnDiv{
+.btnDiv {
     display: flex;
     justify-content: center;
 }
 
-.inputDiv{
+.inputDiv {
     margin-bottom: 1rem;
 }
 
-.errorMessage{
+.errorMessage {
     color: red;
     width: 30vw;
 }
 
-.heading{
+.heading {
     display: flex;
     justify-content: center;
     font-size: 2rem;
     font-weight: 500;
     margin-bottom: 1rem;
-    color:#3E8ED0;
+    color: #3E8ED0;
     font-family: 'Montserrat', sans-serif;
     font-family: 'Ysabeau Infant', sans-serif;
+}
+
+/* responsive */
+
+@media screen and (max-width: 900px) {
+
+    .input {
+        width: 370px;
+        height: 6vh;
+        padding-left: 1rem;
+        font-size: 1rem;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .input {
+        width: 300px;
+        height: 6vh;
+        padding-left: 1rem;
+        font-size: 1rem;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+
+    .input {
+        width: 250px;
+        height: 6vh;
+        padding-left: 1rem;
+        font-size: 1rem;
+    }
+
 }
