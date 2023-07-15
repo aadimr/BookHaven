@@ -35,7 +35,7 @@
 
 .errorMessage{
     color: red;
-    width: 30vw;
+    width: 450px;
 }
 
 .heading{
@@ -76,6 +76,11 @@
         font-size: 1rem;
     }
 
+    .errorMessage{
+        width: 370px;
+        width: 450px;
+    }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -87,6 +92,11 @@
         font-size: 1rem;
     }
 
+    .errorMessage{
+        color: red;
+        width: 300px;
+    }
+
 }
 
 @media screen and (max-width: 450px) {
@@ -96,6 +106,11 @@
         height: 6vh;
         padding-left: 1rem;
         font-size: 1rem;
+    }
+
+    .errorMessage{
+        color: red;
+        width: 250px;
     }
 
 }

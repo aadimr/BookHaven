@@ -14,7 +14,7 @@
 
 .input {
     width: 450px;
-    min-height: 6vh;
+    height: 50px;
     padding-left: 1rem;
     font-size: 1rem;
     background-color: #F9FAFF;
@@ -31,7 +31,7 @@
 
 .errorMessage {
     color: red;
-    width: 30vw;
+    width: 450px;
 }
 
 .heading {
@@ -51,9 +51,14 @@
 
     .input {
         width: 370px;
-        min-height: 6vh;
+        height: 50px;
         padding-left: 1rem;
         font-size: 1rem;
+    }
+
+    .errorMessage {
+        color: red;
+        width: 370px;
     }
 
 }
@@ -62,9 +67,14 @@
 
     .input {
         width: 300px;
-        min-height: 6vh;
+        height: 50px;
         padding-left: 1rem;
         font-size: 1rem;
+    }
+
+    .errorMessage {
+        color: red;
+        width: 300px;
     }
 
 }
@@ -73,9 +83,14 @@
 
     .input {
         width: 250px;
-        min-height: 6vh;
+        height: 50px;
         padding-left: 1rem;
         font-size: 1rem;
+    }
+
+    .errorMessage {
+        color: red;
+        width: 250px;
     }
 
 }
