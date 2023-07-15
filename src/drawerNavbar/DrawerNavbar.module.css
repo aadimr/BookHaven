@@ -25,13 +25,15 @@
     display: none;
 }
 
-.p{
+.link{
     font-size: 1.3rem;
     width: 300px;
     gap: 20px;
     height: 3rem;
     display: flex;
     align-items: center;
+    color: #3E8ED0;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 1000px) {

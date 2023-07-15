@@ -59,7 +59,7 @@ function DrawerNavbar() {
                                     <span>{ele.icon}</span>
                                 </ListItemIcon>
                                 {
-                                    showLoggedInUser && index === 0 ? <p className={style.p}><span><AccountCircle sx={{fontSize:"2rem",marginTop:"5px"}}/></span>{showLoggedInUser.user_Name}</p> :
+                                    showLoggedInUser && index === 0 ? <Link to={"/"} className={style.link}><span><AccountCircle sx={{fontSize:"2rem",marginTop:"5px"}}/></span>{showLoggedInUser.user_Name}</Link> :
                                         <ListItemText sx={!showLoggedInUser && index === pagesName.length - 1 ? { display: "none" } : null}>
                                             {ele.name}
                                         </ListItemText>
