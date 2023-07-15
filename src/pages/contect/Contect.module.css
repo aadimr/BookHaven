@@ -97,6 +97,17 @@
 
 }
 
+@media screen and (max-width: 1000px) {
+    
+    .wrapper {
+        min-height: 100vh;
+        padding: 8rem 5rem 5rem 5rem;
+        display: flex;
+        background-color: #F9FAFF;
+    }
+
+}
+
 @media screen and (max-width: 900px) {
 
     .textarea {

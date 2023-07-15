@@ -15,7 +15,7 @@ function About() {
       </div>
       <div className={style.aboutMe}>
         <h1>About me</h1>
-        <p className={style.description}>I am a highly motivated and dedicated front-end developer trainee with a passion for creating visually appealing and user-friendly websites. Proficient in HTML, CSS, JavaScript, Redux-toolkit and also front-end JavaScript library like React. Seeking opportunities to gain hands-on experience and collaborate with experienced developers to enhance my skills and contribute to innovative web projects. Committed to staying updated with the latest industry trends and best practices. Decent communication and teamwork skills, with a drive to learn from and contribute to a dynamic development team. Ready to take on challenges, grow as a developer, and make a positive impact in the world of web development.</p>
+        <p className={style.description}>Hello, I am Aditya Shaw. I am a highly motivated and dedicated front-end developer trainee with a passion for creating visually appealing and user-friendly websites. Proficient in HTML, CSS, JavaScript, Redux-toolkit and also front-end JavaScript library like React. Seeking opportunities to gain hands-on experience and collaborate with experienced developers to enhance my skills and contribute to innovative web projects. Committed to staying updated with the latest industry trends and best practices. Decent communication and teamwork skills, with a drive to learn from and contribute to a dynamic development team. Ready to take on challenges, grow as a developer, and make a positive impact in the world of web development.</p>
       </div>
     </div>
   )

@@ -22,7 +22,6 @@
     flex-direction: row;
     gap: 5rem;
     align-items: center;
-    margin-bottom: 2rem;
     display: none;
 }
 
@@ -49,7 +48,6 @@
         flex-direction: row;
         gap: 5rem;
         align-items: center;
-        margin-bottom: 2rem;
     }
 
 }
