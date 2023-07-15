@@ -68,28 +68,28 @@ BookHaven (An e-commerce website for purchase books and also user can add their 
 
 ## Deployment Link
 
-* bookhaven-9leg852zn-aadimr.vercel.app
+* https://bookhaven-9leg852zn-aadimr.vercel.app/
 
 ## Data Structure
 
 1. ### User SingUp 
-
+```
 {
     user_Name: "",
     email: "",
     password: "",
     confirm_Password: "",
 }
-
+```
 2. ### User LogIn
-
+```
 {
     email: "",
     password: "",
 }
-
+```
 3. ### AddBook
-
+```
 {
   img: "",
   book_Name: "",
@@ -97,9 +97,9 @@ BookHaven (An e-commerce website for purchase books and also user can add their 
   review: "",
   price: "",
 }
-
+```
 4. ### EditBook
-
+```
 {
   img: "existing img URL",
   book_Name: "existing book_Name",
@@ -107,7 +107,7 @@ BookHaven (An e-commerce website for purchase books and also user can add their 
   review: "existing review",
   price: "existing price",
 }
-
+```
 ## APIs
 
 mock API is used for this project (source: https://mockapi.io/) 
