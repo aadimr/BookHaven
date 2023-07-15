@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Project Title
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+BookHaven (An e-commerce website for purchase books and also user can add their own books for sale)
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+1. When user will enter to the website they will be able to see the home page where at the very top a header will be there which includes 
+   the website logo, search panel, cart logo and singUp button.
 
-### `npm start`
+2. Just below the header there will be a navbar with includes the link of the pages which are Home, Categories, About, More and Contact.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. When user click on More they will get a menu there they will see two menu items which are cart and addBook. Inside cart user can see 
+   their selected item which they had selected to add into the cart but for that they have to be loggedin otherwise the cart will be show 
+   as empty and inside addBook they can add their own book for sale but to do this user must have to be loggedin or else they will be
+   redirect to the login page.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+4. If user added their own book for sale then they will get accessibility to edit and delete their book (Note: User will have 
+   accessibility to edit and delete their own book only) and to edit or delete their own book they have to click on horizontal three dots 
+   icon which they can see on their own book only.
 
-### `npm test`
+5. To add something to the cart user must have to be loggedin or else they will be redirect to the login page.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+6. To login or register user can click on the singUp button which will redirect them to the login page if user already registered before 
+   then they can simply login by using their email and password which they had used for the registration and if user doesn't registered 
+   before then they have to click on the singUp which will be present below to the submit button of the login page by clicking on singUp 
+   user will be redirect to the registration page where User can resister by giving their credentials (name, email, password and 
+   confirm password). Once user account created sucessfully then user will be redirect to the login page and after login user will be 
+   redirect to the home page.        
 
-### `npm run build`
+7. For purchase books user have to go to the Categories page there user can look for the books and also user can use filter to filter the 
+   books to see the books of a specific author or else they can use search panel for searching books by typing book or author name.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+8. If user willing to purchase any book then they can add that book to the cart by clicking on the button add to cart and then from the 
+   cart they can also increase and decrease the quantity and they can place the oreder by clicking on the paynow button.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+9. To know about us user can visit the About page.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+10. For contact us user can visit contact page.
 
-### `npm run eject`
+11. For the device which have size of 1000px or less than that there is no header we have drawer where user can see all pages name to 
+    visit there.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+         
