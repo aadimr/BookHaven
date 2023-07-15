@@ -11,7 +11,7 @@
 }
 
 .wrapper{
-    height: 10vh;
+    height: 80px;
     background-color: #C8E2F7;
     position: fixed;
     width: 100vw;
@@ -39,7 +39,7 @@
 @media screen and (max-width: 1000px) {
 
     .wrapper{
-        height: 10vh;
+        height: 80px;
         background-color: #C8E2F7;
         position: fixed;
         width: 100vw;
@@ -57,7 +57,7 @@
 @media screen and (max-width: 400px) {
 
     .wrapper{
-        height: 10vh;
+        height: 80px;
         background-color: #C8E2F7;
         position: fixed;
         width: 100vw;

@@ -11,7 +11,7 @@
 
 .img {
     width: 80vw;
-    height: 55vh;
+    height: 450px;
 }
 
 .textOverlay {
@@ -56,6 +56,14 @@
         display: flex;
         flex-direction: column;
         gap: .5rem;
+    }
+
+}
+
+@media screen and (max-width: 355px) {
+    
+    .h1{
+        font-size: 2rem;
     }
 
 }

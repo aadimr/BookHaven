@@ -22,7 +22,7 @@ function Newsletter() {
     <div className={style.wrapper}>
       <div className={style.img}><img src="https://protonpiston.com/katalog/assets/images/background/bg1.jpg" alt='error' className={style.img} /></div>
       <div className={style.textOverlay}>
-        <h1>Join Newsletter</h1>
+        <h1 className={style.h1}>Join Newsletter</h1>
         <p className={style.p}>Be the first to know about new releases, exclusive discounts, and more.</p>
         <div className={style.inputAndButton}>
           <Input className={style.input} placeholder={"Enter your email"} onChange={handleOnChange} value={val}/>
