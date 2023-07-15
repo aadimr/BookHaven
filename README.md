@@ -40,4 +40,75 @@ BookHaven (An e-commerce website for purchase books and also user can add their 
 11. For the device which have size of 1000px or less than that there is no header we have drawer where user can see all pages name to 
     visit there.
 
-         
+## Tech stacks
+
+* HTML
+* CSS
+* JavaScript
+* React.js
+* Redux-toolkit with createAsyncThunk
+
+## Dependencies
+
+* mui/icons-material
+* mui/material
+* reduxjs/toolkit
+* formik
+* react-icons
+* react-redux
+* react-router-dom
+* react-slick 
+* react-toastify
+* slick-carousel
+* yup
+
+## Author
+
+* Aditya Shaw
+
+## Deployment Link
+
+* bookhaven-9leg852zn-aadimr.vercel.app
+
+## Data Structure
+
+1. ### User SingUp 
+
+{
+    user_Name: "",
+    email: "",
+    password: "",
+    confirm_Password: "",
+}
+
+2. ### User LogIn
+
+{
+    email: "",
+    password: "",
+}
+
+3. ### AddBook
+
+{
+  img: "",
+  book_Name: "",
+  author_Name: "",
+  review: "",
+  price: "",
+}
+
+4. ### EditBook
+
+{
+  img: "existing img URL",
+  book_Name: "existing book_Name",
+  author_Name: "existing author_Name",
+  review: "existing review",
+  price: "existing price",
+}
+
+## APIs
+
+mock API is used for this project (source: https://mockapi.io/) 
+   
