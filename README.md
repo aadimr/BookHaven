@@ -2,6 +2,8 @@
 
 BookHaven (An e-commerce website for purchase books and also user can add their own books for sale)
 
+## Description
+
 1. When user will enter to the website they will be able to see the home page where at the very top a header will be there which includes 
    the website logo, search panel, cart logo and singUp button.
 
