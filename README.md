@@ -68,7 +68,7 @@ BookHaven (An e-commerce website for purchase books and also user can add their 
 
 ## Deployment Link
 
-* https://bookhaven-9leg852zn-aadimr.vercel.app/
+* https://bookhaven-gttyinx20-aadimr.vercel.app/
 
 ## Data Structure
 
