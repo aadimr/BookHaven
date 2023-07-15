@@ -32,3 +32,107 @@
     margin-right: 1.2rem;
     color: #3E8ED0;
 }
+
+@media screen and (max-width: 1000px) {
+
+    .inputDiv{
+        border: 2px solid rgb(160, 149, 149);
+        border-radius: 5rem;
+        height: 6vh;
+        width: 400px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .input{
+        width: 350px;
+        height: 5.5vh;
+        border-radius: 5rem;
+        font-size: 1rem;
+        padding-left: 1.5rem;
+        border: none;
+        background-color: #C8E2F7;
+    }
+
+    .searchLogo{
+        font-size: 2rem !important;
+        margin-right: 1.2rem;
+        color: #3E8ED0;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .inputDiv{
+        border: 2px solid rgb(160, 149, 149);
+        border-radius: 5rem;
+        height: 6vh;
+        width: 300px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .input{
+        width: 250px;
+        height: 5.5vh;
+        border-radius: 5rem;
+        font-size: 1rem;
+        padding-left: 1.5rem;
+        border: none;
+        background-color: #C8E2F7;
+    }
+
+}
+
+
+@media screen and (max-width: 500px) {
+
+    .inputDiv{
+        border: 2px solid rgb(160, 149, 149);
+        border-radius: 5rem;
+        height: 6vh;
+        width: 250px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .input{
+        width: 200px;
+        height: 5.5vh;
+        border-radius: 5rem;
+        font-size: 1rem;
+        padding-left: 1.5rem;
+        border: none;
+        background-color: #C8E2F7;
+    }
+
+}
+
+
+@media screen and (max-width: 350px) {
+
+    .inputDiv{
+        border: 2px solid rgb(160, 149, 149);
+        border-radius: 5rem;
+        height: 6vh;
+        width: 200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .input{
+        width: 150px;
+        height: 5.5vh;
+        border-radius: 5rem;
+        font-size: 1rem;
+        padding-left: 1.5rem;
+        border: none;
+        background-color: #C8E2F7;
+    }
+
+}

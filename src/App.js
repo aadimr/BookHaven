@@ -13,6 +13,7 @@ import SingUP from "./header/singUp/SingUp";
 import ShowAndHide from "./components/showAndHide/ShowAndHide";
 import LogIn from "./header/logIn/LogIn";
 import Cart from "./extraPages/cart/Cart";
+import DrawerNavbar from "./drawerNavbar/DrawerNavbar";
 import PrivateRoutes from "./components/protectedRoute/PrivateRoutes";
 import { PrivateRoutesForLogInAndSingUp } from "./components/protectedRoute/PrivateRoutes";
 
@@ -23,6 +24,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <ShowAndHide>
+          <DrawerNavbar/>
           <Header />
           <Navbar />
         </ShowAndHide>
