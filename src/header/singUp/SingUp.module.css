@@ -14,7 +14,7 @@
 
 .input{
     width: 450px;
-    height: 6vh;
+    height: 50px;
     padding-left: 1rem;
     font-size: 1rem;
     background-color: #F9FAFF;
@@ -71,7 +71,7 @@
 
     .input {
         width: 370px;
-        height: 6vh;
+        height: 50px;
         padding-left: 1rem;
         font-size: 1rem;
     }
@@ -87,7 +87,7 @@
 
     .input {
         width: 300px;
-        height: 6vh;
+        height: 50px;
         padding-left: 1rem;
         font-size: 1rem;
     }
@@ -103,7 +103,7 @@
 
     .input {
         width: 250px;
-        height: 6vh;
+        height: 50px;
         padding-left: 1rem;
         font-size: 1rem;
     }
