@@ -6,7 +6,7 @@ export const bookCategory = ["History", "Horror - Thriller", "Love Stories", "Sc
 
 export const extraBookCategory = ["Biography", "Astrology", "Digital Marketing", "Software Development", "Ecommerce"]
 
-export const siteMap = [{ to: "/", name: "Home" }, { to: "/categories", name: "Categories" }, { to: "/about", name: "About" }, { to: "/blog", name: "Blog" }, { to: "/contect", name: "Contect" }]
+export const siteMap = [{ to: "/", name: "Home" }, { to: "/categories", name: "Categories" }, { to: "/about", name: "About" }, { to: "/blog", name: "Blog" }, { to: "/contect", name: "Contact" }]
 
 export const icons = [
     { iconeName: <FaFacebook />, href: "https://www.facebook.com" },
