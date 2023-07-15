@@ -16,7 +16,9 @@ BookHaven (An e-commerce website for purchase books and also user can add their 
 
 4. If user added their own book for sale then they will get accessibility to edit and delete their book (Note: User will have 
    accessibility to edit and delete their own book only) and to edit or delete their own book they have to click on horizontal three 
-   dots icon which they can see on their own book only.
+   dots icon which they can see on their own book only.(Note: To see your own added book you have to go to Categories page and scroll 
+   down to the very bottom it is because your book is getting pushed to the array or else you can search your own added book by using 
+   book name or the author name from the search panel)
 
 5. To add something to the cart user must have to be loggedin or else they will be redirect to the login page.
 
