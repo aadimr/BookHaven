@@ -92,12 +92,12 @@ function SingUP() {
                         </div>
                         <div className={style.inputDiv}>
                             <label>Password:</label>
-                            <Input className={style.input} placeholder={"Enter your password"} name={"password"} value={values.password} onChange={handleChange} onBlur={handleBlur} />
+                            <Input type={"password"} className={style.input} placeholder={"Enter your password"} name={"password"} value={values.password} onChange={handleChange} onBlur={handleBlur} />
                             {errors.password && touched.password ? <p className={style.errorMessage}>*{errors.password}</p> : null}
                         </div>
                         <div className={style.inputDiv}>
                             <label>Confirm Password:</label>
-                            <Input className={style.input} placeholder={"Enter your confirm password"} name={"confirm_Password"} value={values.confirm_Password} onChange={handleChange} onBlur={handleBlur} />
+                            <Input type={"password"} className={style.input} placeholder={"Enter your confirm password"} name={"confirm_Password"} value={values.confirm_Password} onChange={handleChange} onBlur={handleBlur} />
                             {errors.confirm_Password && touched.confirm_Password ? <p className={style.errorMessage}>*{errors.confirm_Password}</p> : null}
                         </div>
                         <div className={style.btnDiv}>
