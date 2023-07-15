@@ -15,6 +15,6 @@ export const pagesName = [
     { to: "/about", name: "About", icon: <RoundaboutLeftIcon sx={{fontSize:"2rem", color:"#3E8ED0"}}/>},
     { to: "/cart", name: "Cart", icon: <AddShoppingCartIcon sx={{fontSize:"2rem", color:"#3E8ED0"}}/>},
     { to: "/AddBooks", name: "AddBook", icon: <ImportContactsIcon sx={{fontSize:"2rem", color:"#3E8ED0"}}/>},
-    { to: "/contect", name: "Contect", icon: <PermContactCalendarIcon sx={{fontSize:"2rem", color:"#3E8ED0"}}/>},
+    { to: "/contect", name: "Contact", icon: <PermContactCalendarIcon sx={{fontSize:"2rem", color:"#3E8ED0"}}/>},
     { to: "/logIn", name: <DrawerNavbarLogOut/>, icon: <LogoutIcon sx={{fontSize:"2rem", color:"#3E8ED0"}}/>},
 ] 
