@@ -110,6 +110,15 @@ BookHaven (An e-commerce website for purchase books and also user can add their 
   price: "existing price",
 }
 ```
+5. ### Contact
+```
+{
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+}
+```
 ## APIs
 
 mock API is used for this project (source: https://mockapi.io/) 
