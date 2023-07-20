@@ -34,7 +34,7 @@ function AllBooks() {
         draggable: true,
         progress: undefined,
         theme: "light",
-        });
+    });
 
     const dispatch = useDispatch();
 
@@ -49,7 +49,12 @@ function AllBooks() {
     }, [dispatch])
 
 
-    const { books, loading } = useSelector((state) => state.app)
+    let { books, loading } = useSelector((state) => state.app)
+
+    let { filteredByAuthorName } = useSelector((state) => state.filteredBook)
+
+    let displayBooks = books;
+
     useEffect(() => {
         dispatch(showBook());
     }, [dispatch]);
@@ -57,6 +62,10 @@ function AllBooks() {
     if (loading) {
         return <h2>Loading...</h2>
     }
+    if (!filteredByAuthorName.length <= 0) {
+        displayBooks = displayBooks.filter(ele => filteredByAuthorName.includes(ele.author_Name))
+    }
+
 
     const showLoggedInUserDetails = loggedInuserDetails ? users.find(ele => ele.id === loggedInuserDetails.id) : null
 
@@ -85,10 +94,10 @@ function AllBooks() {
             };
             dispatch(updateUser({ id: showLoggedInUserDetails.id, ...updatedUser }));
             toastOfItemAdded();
-        }else{
+        } else {
             navigate("/logIn")
         }
-       
+
     }
 
 
@@ -97,14 +106,14 @@ function AllBooks() {
         <div className={style.wrapper}>
             <ToastContainer />
             <div className={style.bookDetails}>
-                {books && books.map((ele) => (
+                {displayBooks && displayBooks.map((ele) => (
                     <div key={ele.id} className={style.bookCard}>
                         <div><img src={ele.img} alt="error" className={style.img} /></div>
                         <div className={style.details}>
                             <div className={style.bookNameAndOptionIcon}>
                                 <p>{ele.book_Name}</p>
                                 <span className={style.optionMenu}><OptionMenu id={ele.id}
-                                    styles={showLoggedInUserDetails && showLoggedInUserDetails.id === ele.userId ? { display: "inline" } : { display: "none" }} notify={bookDeletednotify}/></span>
+                                    styles={showLoggedInUserDetails && showLoggedInUserDetails.id === ele.userId ? { display: "inline" } : { display: "none" }} notify={bookDeletednotify} /></span>
                             </div>
                             <p><span className={style.By}>By: </span>{ele.author_Name}</p>
                             <div className={style.reviewStar}>

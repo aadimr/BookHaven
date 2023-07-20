@@ -79,22 +79,6 @@ export const updateBook = createAsyncThunk(
   }
 );
 
-// filterByAuthorName action
-export const filterByAuthorName = createAsyncThunk(
-  "filterByAuthorName",
-  async (authorName, { rejectWithValue }) => {
-    try {
-      const response = await fetch(
-        `https://647c4884c0bae2880ad0867a.mockapi.io/CRUD?author_Name=${authorName}`
-      );
-      const result = await response.json();
-      return result;
-    } catch (error) {
-      return rejectWithValue(error);
-    }
-  }
-);
-
 // filterBySearchPanel action
 
 export const filterBySearchPanel = createAsyncThunk(
@@ -179,17 +163,6 @@ export const BooksDetail = createSlice({
         )
       })
       .addCase(updateBook.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error;
-      })
-      .addCase(filterByAuthorName.pending, (state) => {
-        state.loading = true;
-      })
-      .addCase(filterByAuthorName.fulfilled, (state, action) => {
-        state.loading = false;
-        state.books = action.payload;
-      })
-      .addCase(filterByAuthorName.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error;
       })

@@ -1,35 +1,36 @@
 import Input from '../../components/input/Input';
 import style from './FilterByAuthorName.module.css';
-import { useDispatch } from 'react-redux';
-import { filterByAuthorName, showBook } from '../../store/BooksSlice';
-import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { authorName } from './authorData';
+import { getCheckedAuthor, getUnCheckedAuthor } from '../../store/filterBookSlice';
+import { useCallback } from 'react';
 
 
 function FilterByAuthorName() {
   const dispatch = useDispatch();
 
+  const { filteredByAuthorName } = useSelector((state) => state.filteredBook);
+
+  useCallback(() => {
+    authorName.forEach((author) => {
+      if (filteredByAuthorName.includes(author)) {
+        dispatch(getCheckedAuthor(author));
+      } else {
+        dispatch(getUnCheckedAuthor(author));
+      }
+    });
+  }, [dispatch,filteredByAuthorName]);
+
+
   function handleChangeCheckBox(e) {
-    const checkedValue = e.target.value;
-
-    if (e.target.checked) {
-      const checkboxes = document.getElementsByName("author");
-      checkboxes.forEach((checkbox) => {
-        if (checkbox.value !== checkedValue) {
-          checkbox.checked = false;
-        }
-      });
-
-      dispatch(filterByAuthorName(checkedValue));
+    const { checked, value } = e.target
+    if (checked) {
+      dispatch(getCheckedAuthor(value))
     }
-    else {
-      dispatch(showBook())
+    if (!checked) {
+      dispatch(getUnCheckedAuthor(value))
     }
   }
-
-  useEffect(() => {
-    dispatch(showBook())
-  }, [dispatch])
 
 
   return (
@@ -44,6 +45,7 @@ function FilterByAuthorName() {
               name="author"
               value={ele}
               onChange={handleChangeCheckBox}
+              checked={filteredByAuthorName.includes(ele)}
             />
             {ele}
           </span>

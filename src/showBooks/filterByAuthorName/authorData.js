@@ -1,1 +1,1 @@
-export const authorName = ["Chetan Bhagat","Arundhati Roy","Dan Brown","J.K. Rowling","Margaret Atwood"]
+export const authorName = ["Chetan Bhagat","Arundhati Roy","Dan Brown","JK Rowling","Margaret Atwood"]

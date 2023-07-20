@@ -25,7 +25,6 @@ function LogOut() {
             {showLoggedInUser ? <div className={style.nameAndArrow}><p className={style.LoggedInuserName}>{showLoggedInUser.user_Name}</p><span><MenuArrow /></span></div> :
                 <Link to="/logIn">
                     <Buttons sx={{
-                        marginRight: "8rem",
                         height: "3.5rem",
                         borderRadius: "5rem",
                         width: "8rem",

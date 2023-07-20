@@ -5,7 +5,7 @@ import { icons } from "./linkData";
 function About() {
   return (
     <div className={style.wrapper}>
-      <img src={process.env.PUBLIC_URL + '/Aditya Shaw.jpeg'} alt="error" className={style.img} />
+      <img src={process.env.PUBLIC_URL + '/Aditya_Shaw.png'} alt="error" className={style.img} />
       <div className={style.linkWrapper}>
         {
           icons.map((ele, index) => (
