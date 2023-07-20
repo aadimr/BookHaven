@@ -5,7 +5,7 @@ BookHaven (An e-commerce website for purchase books and also user can add their 
 ## Description
 
 1. When user will enter to the website they will be able to see the home page where at the very top a header will be there which includes 
-   the website logo, search panel, cart logo and singUp button.
+   the website logo, search panel, cart logo and signIn button.
 
 2. Just below the header there will be a navbar with includes the link of the pages which are Home, Categories, About, More and Contact.
 
@@ -15,14 +15,16 @@ BookHaven (An e-commerce website for purchase books and also user can add their 
    redirect to the login page.
 
 4. If user added their own book for sale then they will get accessibility to edit and delete their book (Note: User will have 
-   accessibility to edit and delete their own book only) and to edit or delete their own book they have to click on horizontal three dots 
-   icon which they can see on their own book only.
+   accessibility to edit and delete their own book only) and to edit or delete their own book they have to click on horizontal three 
+   dots icon which they can see on their own book only.(Note: To see your own added book you have to go to Categories page and scroll 
+   down to the very bottom it is because your book is getting pushed to the array or else you can search your own added book by using 
+   book name or the author name from the search panel)
 
 5. To add something to the cart user must have to be loggedin or else they will be redirect to the login page.
 
-6. To login or register user can click on the singUp button which will redirect them to the login page if user already registered before 
+6. To login or register user can click on the signIn button which will redirect them to the login page if user already registered before 
    then they can simply login by using their email and password which they had used for the registration and if user doesn't registered 
-   before then they have to click on the singUp which will be present below to the submit button of the login page by clicking on singUp 
+   before then they have to click on the singUp which will be present below to the submit button of the login page by clicking on signIn 
    user will be redirect to the registration page where User can resister by giving their credentials (name, email, password and 
    confirm password). Once user account created sucessfully then user will be redirect to the login page and after login user will be 
    redirect to the home page.        
@@ -68,7 +70,7 @@ BookHaven (An e-commerce website for purchase books and also user can add their 
 
 ## Deployment Link
 
-* https://bookhaven-9leg852zn-aadimr.vercel.app/
+* https://bookhaven-gttyinx20-aadimr.vercel.app/
 
 ## Data Structure
 
@@ -106,6 +108,15 @@ BookHaven (An e-commerce website for purchase books and also user can add their 
   author_Name: "existing author_Name",
   review: "existing review",
   price: "existing price",
+}
+```
+5. ### Contact
+```
+{
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
 }
 ```
 ## APIs
