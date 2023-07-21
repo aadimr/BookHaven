@@ -14,12 +14,10 @@
     height: 370px;
 }
 
-.textOverlay {
+ .textOverlay {
     position: absolute;
-    margin-top: 2rem;
     font-size: 1.2rem;
     color: white;
-    padding: 5px;
     width: 80vw;
     display: flex;
     flex-direction: column;
@@ -27,8 +25,8 @@
     align-items: center;
     font-family: "Playfair Display", serif;
     gap: 2rem;
-    height: 45vh;
-}
+    height: 370px;
+} 
 
 .input {
     border-radius: 1.5rem;
