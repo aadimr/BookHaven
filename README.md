@@ -70,7 +70,7 @@ BookHaven (An e-commerce website for purchase books and also user can add their 
 
 ## Deployment Link
 
-* https://bookhaven-hqae9chgf-aadimr.vercel.app
+* https://bookhaven-5uvzmtp0m-aadimr.vercel.app
 
 ## Data Structure
 
